@@ -1,0 +1,7 @@
+*.png
+*.jp*g
+fig*.pdf
+*.csv
+*.dat
+*.xls*
+*DS_Store*
