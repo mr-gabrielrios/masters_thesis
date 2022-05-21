@@ -1,0 +1,434 @@
+\chapter{Estimating surface sensible heat flux using satellite data}
+\label{chapter:goes}
+\thispagestyle{myheadings}
+
+% set this to the location of the figures for this chapter. it may
+% also want to be ../Figures/2_Body/ or something. make sure that
+% it has a trailing directory separator (i.e., '/')!
+\graphicspath{{2_Pub1/}}
+
+\section{Background and introduction}
+
+Sensible heat flux ($Q_H$) is a key component of the Earth's surface energy balance, as it characterizes the surface-to-atmosphere transport of heat. In urban environments,  anthropogenic modification of land cover reduces water retention capacity, increasing the roles of sensible heat and heat storage ($Q_S$) in the urban surface energy budget.  $Q_H$ in cities impacts the urban heat island dynamics, hence, it has significant implications on weather prediction and forecasting, air pollution, and building energy use \citep{Imran_2018, Schumacher_2019, Vautard_2007}. 
+
+$Q_H$ is driven by a number of factors - particularly the temperature difference between the land surface temperature (LST) and the air temperature ($T_{air}$) in the lowest levels of the boundary layer. The LST has been shown to be higher in urban areas than surrounding suburban/rural areas \citep{Price_1979}, which is driven by the high thermal inertia of urban land cover. The increased LST can both increase $T_{air}$ and the temperature difference between the two, resulting in an increased $Q_H$ relative to surrounding areas \citep{Kato_2005}.
+
+A challenge in understanding the relationship between land cover, LST, $T_{air}$ and $Q_H$ is presented by the techniques used for measurement and estimation of $Q_H$. This challenge is brought about by a number of factors, including (but not limited to):
+
+\begin{itemize}
+    \item Computationally-expensive numerical models for estimation purposes \citep{Best_2005, Zhang_2015},
+    \item The lack of well-established measurement networks in rural and urban areas \citep{chrysoulakis_urban_2018, Voogt_2003}
+\end{itemize}
+
+Numerical models are powerful tools that allow for the understanding of atmospheric processes at much greater spatial extents than possible by measurement and observation alone. However, these models can often feature significant inaccuracies in areas with high spatial heterogeneity, such as urban areas, due to low grid domain resolutions relative to the size and spacing of elements in heterogeneous environments (e.g. buildings, roads, scattered green space and vegetative cover) \citep{Chen_2011, Hong_2012, Leroyer_2014}. Accordingly, model accuracy can only be improved upon by significantly increasing model resolution to resolve these spatial issues, which risks high time and resource consumption.  Meanwhile, measurement networks are vital since observational data is an essential source of validation data for numerical models to ensure their performance. However, accurate measurement of parameters such as $Q_H$ is challenged by the lack of measurement networks with sufficient spatial resolution that can serve as databases for validation efforts. Moreover, this challenge is exacerbated in urban areas due to the aforementioned land cover heterogeneity, which is critical in determining $Q_H$ in localized areas \citep{Feddema_2005, Wang_2016}. To address this, remote sensing technologies have been increasingly used to devise estimation methods for $Q_H$.
+
+Several studies in the reviewed literature have estimated heat fluxes using remote sensing methods in rural areas using a variety of methods \citep{Cammalleri_2012, Kim_2019, Miglietta_2009, Mkhwanazi_2012, Ortega-Farias_2016}.  \citet{Miglietta_2009} describes an estimation method using Meteosat land surface temperature and radiation products, as well as aircraft-mounted sensors, to evaluate fluxes over forested areas and cropland between May and June 2005.  In \citet{Cammalleri_2012}, aircraft-mounted multispectral and thermal cameras were used in conjunction with meteorological data to estimate $Q_H$ over 7 days within a 4 month period, with a study area covered by cropland, fallow soil, and bare soil.  \citet{Mkhwanazi_2012} used Landsat 5 imagery with a bulk parameterization method to evaluate fluxes over an alfalfa field in rural Colorado. \citet{Kim_2019} and \citet{Ortega-Farias_2016}  showed promising results using unmanned aerial vehicles (UAVs) to estimate $Q_H$ over a variety of land cover types in rural areas throughout a range of synoptic meteorological conditions, with good agreement between UAV-based estimation results and instrument-based surface observations. These studies all demonstrate great potential for using remote sensing for estimation of surface fluxes, although their temporal frequency and focus on homogeneous land cover types hinders their applicability to urban areas.
+
+Fewer studies have been performed to estimate $Q_H$ using remote sensing methods in urban areas, which feature far greater land cover heterogeneity \citep{Feigenwinter_2018, Liu_2012, Voogt_2000, Xu_2008}. Two studies \citep{Voogt_2000, Xu_2008} used helicopter-mounted instruments to collect observational data over cities with the goal of estimating $Q_H$ and associated parameters. \citet{Voogt_2000} implemented a method for estimating $Q_H$ over a 400 x 300 m sector of Vancouver over 2 days using a helicopter-mounted thermal scanner for surface temperature data collection, using the aerodynamic resistance method for estimation of $Q_H$.  \citet{Xu_2008} showed that remote sensing is a viable way to determine the variation of $Q_H$ in urban areas by using an airborne spectrometer to analyze a section of Shanghai to determine land cover information, surface temperature, and other parameters relevant to the calculation of $Q_H$.  Although these methods were able to image urban areas at ultrahigh spatial resolutions, the lack of spatiotemporal variability due to the small study areas and low image frequency, as well as the expenses associated with the study, prevent them from being a practical method for estimating $Q_H$ for larger areas over extended periods of time.  A more recent remote sensing approach that addresses these issues is the use of satellite data over urban areas, as presented in \citet{Feigenwinter_2018} and \citet{Liu_2012}. In \citet{Liu_2012}, ASTER imagery was used as input to a model to estimate surface fluxes over a ~25 $km^2$ area, encompassing a variety of land cover types that range from highly-developed urban areas to open green space to crop fields. Although study results yielded some correlation with related atmospheric parameters for similar settings in the literature, no surface observation data was used to further validate findings from the study. Additionally, the study was performed for a single point in time, preventing any temporal variability analysis from being performed.  In a study by \citet{Feigenwinter_2018}, Landsat 8 and TIRS data was used in conjunction with land cover data to employ the aerodynamic resistance method to estimate sensible and latent heat fluxes in and around Basel, Switzerland over a wide range of land cover types at a very high spatial resolution (100 m).  This study presents a comprehensive approach to evaluating spatial variability of fluxes in a heterogeneous study area as well as a relatively robust validation procedure due to the high density of flux towers in an urban setting. Results show generally good agreement at all validation locations, although the temporal frequency of Landsat and TIRS satellite imagery highly limits this method to one estimation every 8 days, at minimum.
+
+In this study, a method for estimating $Q_H$ using a combination of open-access remote sensing and ground observational data in a dedicated, cost-effective satellite-based model is introduced. The objective of this method is to use satellite data to provide a large spatial and temporal domain over which $Q_H$ can be accurately estimated. The model uses satellite data from the NOAA/NASA Geostationary Operational Environmental Satellite (GOES-16), ground observational data from NWS/FAA/DOD Automated Surface Observing Systems (ASOS) stations, and land cover data from the MRLC 2016 National Land Cover Database (NLCD) to estimate $Q_H$. 
+The primary advantage to using the GOES-16 satellite for the estimation of $Q_H$ is the spatial extent and high temporal resolution of its collected data. Although GOES-16 satellite data features some limitations such as inability to reliably estimate during periods with significant sky cover and a moderate spatial resolution of 2 km, the benefits provided by remote sensing data for $Q_H$ estimation allow for the limitations of previous studies with similar objectives to be addressed and mitigated. In this paper, New York City will be used as a case study for the validation of this model.
+
+The primary objectives of this paper are:
+\begin{itemize}
+    \item to develop a satellite-based model to estimate the $Q_H$ of urban environments at high temporal and moderate spatial resolutions;
+    \item to validate and compare the satellite-based estimates of $Q_H$ with ground-based observations, as well as with $Q_H$ derived from high-resolution urban climate models, both temporally and spatially for multiple seasons.
+\end{itemize}
+
+This paper will first discuss the theoretical background for the satellite model, including the use of Monin-Obukhov similarity theory \citep{Monin_1954} and the method for estimation of element roughness heights in urban areas. Next, the paper reviews the use of GOES-16 satellite data and an associated urban air temperature model \citep{Hrisko_2020} as inputs in the model, as well as how ground stations were used for model inputs and validation. Subsequently, the model results over the year-long study period are presented, along with validation data accompanied by a statistical evaluation of model performance against ground stations. Finally, there is a discussion regarding the performance of the model, potential sources of error within the model and the validation process, as well as application potential and future work to improve the methods presented here.
+
+\section{Methodology and data}
+
+\subsection{Study area}
+
+The study area used is New York City (see Figure \ref{fig:nyc_view}), which is the largest city in the United States by population, with approximately 8.3 million people as of 2019 \citep{bureau_population_nodate} and is among the most densely-populated cities in the United States. The city is composed of 5 boroughs: the Bronx, Brooklyn, Manhattan, Queens, and Staten Island. The Bronx is made up largely of low- to mid-rise residential and commercial buildings, with decreasing building density and height towards the northern end of the borough. Brooklyn is largely composed of low- to mid-rise buildings, with a concentration of high-rise buildings on the East River, while the southern and eastern portions feature larger proportions of lower-density suburban residential areas. Manhattan is primarily composed of residential and commercial buildings, with mid- to high-rise buildings spanning the entirety of the borough (with the exception of Central Park, which is a mixture of open fields, open water, and deciduous \& evergreen forests).  Queens is similar in composition to Brooklyn, with the exception of larger spans of lower-density development towards the eastern half of the borough. Staten Island features significantly lower building densities and heights, with expansive wetland and grassy areas on its western edges and a large forested area in the central area of the borough. The complex urban landscape, coupled with an array of urban flux towers and weather observation stations within the city, make the city an ideal candidate for implementing and validating the urban-focused $Q_H$ model.
+
+\begin{figure}[!h]
+    \centering
+      \includegraphics[width=\textwidth]{Figures/fig1.pdf}
+      \caption{Satellite view of the New York City metropolitan area. New York City, which is composed of 5 boroughs (labeled), is the most-heavily urbanized portion of the metropolitan area, while lower density suburbs and woodlands compose the outer portions of the metropolitan area.}
+      \label{fig:nyc_view}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Model overview}
+
+$Q_H$ and associated parameters are estimated using an iterative algorithm using bulk turbulence parameterizations based on scaling arguments presented by Monin-Obukhov similarity theory. A flowchart of the model structure is shown in Figure \ref{fig:flowchart}. The model operates with a parallel observational and numerical approach; ground-based observational data is used for validation purposes, as well as for inputs to the iterative algorithm (specifically, wind speed, $u$ and air pressure, $p$), while the numerical model receives inputs from the GOES-16 satellite as well as ancillary datasets (land cover and geographical information). The numerical model then matches inputs to specified locations, such as the described study area, before using an iterative algorithm to solve for $Q_H$ and associated parameters.
+
+\begin{figure}[!h]
+    \centering
+      \includegraphics[width=\textwidth]{Figures/fig2.pdf}
+      \caption{Process flowchart for the sensible heat flux model. Observational data was used for validation of the satellite model as well as inputs to the iterative algorithm. The numerical model used remotely-sensed data from the GOES-16 satellite, as well as ancillary datasets for land cover and geographic data. Error analysis was performed by comparing observational data and model results.}
+      \label{fig:flowchart}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Sensible heat flux iterative algorithm}
+
+This section details the variables, equations, and assumptions that constitute the algorithm used to estimate $Q_H$. The iterative algorithm in the numerical model is dependent on the convergence of $Q_H$, which in turn is dependent on the Obukhov length ($L$), as is the case in other algorithms found in the literature \citep{Grimmond_1994, Launiainen_1990}. An assumption of a neutral atmosphere ($L \rightarrow \infty$) defines initial conditions for the model. Momentum and thermal stability parameters, $\psi_m$ and $\psi_h$, are approximately 1 at this initial condition. The following static and dynamic variables - momentum and thermal roughness heights $z_m$ and $z_T$, the bulk heat transfer coefficient $C_H$, the friction velocity $u*$, the Obukhov length $L$, and ultimately, $Q_H$ - are calculated by iteration, similar to the methodology used in land surface models. Convergence is defined by a \textless 1 \% change in $Q_H$ between iterations. 
+
+
+$Q_H$ is directly calculated using Equation \ref{eqn:q_h} \citep{Pond_1974}:
+
+\begin{equation}
+    Q_H = \rho  c_p  C_H  u  (\theta_0 - \theta_r)
+    \label{eqn:q_h}
+\end{equation}
+
+In Equation \ref{eqn:q_h}, $\rho$ is air density calculated as a function of air pressure ($p$) and air temperature at the reference height of 2 m above ground level (AGL) ($T_{air}$), $c_p$ is the average specific heat of air (1006 J $kg^{-1} K^{-1}$) across the range of air temperatures and pressures observed, $C_H$ is a bulk heat transfer coefficient, $u$ is the observed wind speed at a height of 10 m AGL, and $\theta_0$ and $\theta_r$ are potential temperatures at the surface and at 2 m AGL, respectively.  Both $\theta_0$ and $\theta_r$ are derived from remotely-sensed data - $\theta_0$ is derived from remotely-sensed land surface temperature ($T_{LST}$) and $\theta_r$ is derived from a model based on $T_{LST}$ and several other remotely-sensed parameters \citep{Hrisko_2020}. See Section \ref{LST} for a detailed discussion regarding the derivation of these parameters.
+
+$C_H$ is calculated using Equation \ref{eqn:C_h} \citep{Monin_1954}:
+
+\begin{equation}
+    C_H = \frac{\kappa^2}{[ln\frac{z_r}{z_m} - \psi_m \zeta][ln\frac{z_r}{z_T} - \psi_h \zeta]}
+    \label{eqn:C_h}
+\end{equation}
+
+In Equation \ref{eqn:C_h}, $\kappa$ is the von Karman constant (assumed to be 0.40), $z_r$ is the reference height of measurement, $z_m$ is the momentum roughness height, $z_T$ is the thermal roughness height, $\psi_m$ and $\psi_h$ are the momentum and thermal stability parameters, respectively \citep{Businger_1971} \citep{Dyer_1974}, and $\zeta$ is an atmospheric stability parameter, defined as $\zeta = \frac{z_r}{L}$.
+
+The momentum and thermal roughness heights, $z_m$ and $z_T$, are calculated using the Raupach [Equation \ref{eqn:z_m}] and Zilintinkevich [Equation \ref{eqn:z_T}] methods, respectively. The Raupach method \citep{Raupach_1994} for defining the momentum roughness height has been found useful in areas with heterogeneous land cover, as it can be calculated as a function of localized parameters and atmospheric conditions, specifically element roughness height $h_0$ and local friction velocity $u*$ \citep{Voogt_2000}.  The methodology for the estimation of $h_0$ is discussed in detail in \ref{methodology-roughness-height}. The Zilitinkevich method has been shown to be an effective approximation method for $z_T$ in areas with tall canopies, such as those present in urban areas, while enabling $z_T$ to be calculated as a function of local parameters \citep{Chehn_2009, Zilitinkevich_1995}, as described in \citet{Li_2014}. 
+
+\begin{equation}
+    z_m = h_0 (1-\frac{z_d}{h_0}) exp[-\kappa \frac{u}{u*} + 0.193]
+    \label{eqn:z_m}
+\end{equation}
+
+where:
+
+\begin{equation}
+    z_d = exp[0.9793 * ln(h_0) - 0.1536]
+    \label{eqn:z_d}
+\end{equation}
+
+\begin{equation}
+    z_T = z_m exp[-\kappa C_{zil} \sqrt{Re_t}]
+    \label{eqn:z_T}
+\end{equation}
+
+where:
+\begin{equation}
+    C_{zil} = 10^{-0.40*h_0}
+    \label{eqn:C_zil}
+\end{equation}
+\begin{equation}
+    Re_t = \frac{z_m u*}{\nu}
+    \label{eqn:Re_t}
+\end{equation}
+
+The friction velocity $u*$ is expressed by Equation 5 \citep{Monin_1954}:
+\begin{equation}
+    u* = \frac{\kappa u}{ln\frac{z}{z_m} - \psi_m \zeta}
+    \label{eqn:u*}
+\end{equation}
+
+The Obukhov length $L$ is expressed by Equation 6 \citep{Monin_1954}:
+
+\begin{equation}
+    L = \frac{-\rho c_p ({u*}^3) (\theta_0 + \theta_r)}{2 \kappa g Q_H}
+    \label{eqn:L}
+\end{equation}
+
+The iterative model typically converged within 5 iterations, with convergence having been somewhat dependent on atmospheric stability $\zeta$ - the more unstable the atmosphere, the more difficulty the model had in converging.
+
+
+\subsubsection{Roughness height estimation} \label{methodology-roughness-height}
+Element roughness height is a critical parameter for estimating $Q_H$, as is evidenced by Equations \ref{eqn:z_m},  \ref{eqn:z_d},  and \ref{eqn:C_zil}. The element roughness height ($h_0$) describes the height of objects AGL such as buildings or trees.  The element roughness heights are calculated using a weighted average consisting of land cover parameters from the 2016 National Land Cover Database (NLCD) \citep{Yang_2018} and element roughness height estimates from values specific to urban areas from the Weather Research Forecasting (WRF) model \citep{Chen_2011, Skamarock_2008}. 
+
+The NLCD data features 20 land cover classes, each with different element roughness heights. The NLCD data is packaged in a 30 x 30 m grid spanning the continental United States (CONUS) and Alaska. To match the 2 x 2 km gridded data presented by the GOES-16 LST product, the NLCD data was upscaled accordingly. Each NLCD grid element, or pixel, is constituted of an array of values ranging from 0 to 1, with each value corresponding to the fraction of pixel that is determined by each land cover class. See Figure \ref{fig:land_cover_map} for the NLCD land cover map of the study area.
+
+\begin{figure}[!h]
+    \centering
+      \includegraphics[width=0.75\textwidth]{Figures/fig3.pdf}
+      \caption{Land cover map of the New York City metropolitan area, per the 2016 National Land Cover Database \citep{Yang_2018}. The legend shows land cover types and the percentage of the study area occupied by each land cover type. Land cover data is shown at a 30 m resolution. Note that flux observation towers and ground weather (ASOS) stations are labeled accordingly.}
+      \label{fig:land_cover_map}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+      \includegraphics[width=0.75\textwidth]{Figures/fig4.pdf}
+      \caption{Gridded map of element roughness heights across the New York City metropolitan area.  Note that flux observation towers and ground weather (ASOS) stations are labeled accordingly.}
+      \label{fig:roughness_height_map}
+\end{figure}
+
+Element roughness heights used for the WRF model are likewise used for this model for the corresponding NLCD classes. Specific $h_0$ values are used for urban areas, defined as “Developed, Low Intensity”, “Developed, Medium Intensity”, and “Developed, High Intensity” by the NLCD classification system. The corresponding WRF classes are “Low-Density Residential”, “High-Density Residential”, and “Commercial”, respectively. The element roughness heights defined by the WRF for “Low-Density Residential”, “High-Density Residential”,  and “Commercial” areas are 5.00, 7.50, and 10.00 m, respectively, as outlined in the description of an urban modeling system for the WRF model. These values were used in the weighted-averaging scheme to obtain approximate element roughness heights for the model.
+
+To estimate the element roughness height corresponding to each 2 x 2 km pixel, an inner product was taken using the land cover class element roughness heights and the land cover class percentages.  The results of this estimation method are shown in Figure \ref{fig:roughness_height_map}.
+
+\FloatBarrier
+
+\subsection{GOES-R land surface temperature (LST) product} \label{LST}
+The Geostationary Operational Environmental Satellites (GOES-R), GOES-16 and GOES-17, are operated by the National Aeronautic and Space Administration (NASA) and the National Oceanic and Atmospheric Administration (NOAA). The GOES-16 satellite, which is used for this study, is located over the western Atlantic Ocean and focuses on observation of North and South America.
+
+A number of products derived from satellite radiance data are offered by the satellite, including a Land Surface Temperature (LST) product,  from which $T_{LST}$ (and through derivation, $\theta_0$) is obtained. It is available for public use at a  moderate spatial resolution of 2 x 2 km and a high temporal resolution of 5 minutes \citep{Yu_2016}. The LST is calculated using GOES-16 infrared bands 14 and 15. This product features a desirable balance of spatiotemporal resolution and high accuracy (\textless 2.50 K) \citep{Valenti_2017}, making it a critical input to the model. The LST product is available in a gridded netCDF (.nc) format, with data corresponding to latitude and longitude mapped over the spatial extent of satellite observations. The data is filtered based on image quality, which is largely dependent on sky conditions (i.e. cloud cover). Therefore, dates within the study timeframe with clear skies or few clouds (\textless 25$\%$ sky cover, per METAR \citep{WMO_2008} were selected to ensure high-quality LST data as input to the model. The data used for the model was limited to a 0.50 degree extent encompassing the most heavily-urbanized portion of the New York City metropolitan area, extending from approximately (40.8805 N, 74.2021 W) to (40.3805 N, 73.7021 W), spanning a land area of approximately 800 $km^2$. On a 2 km x 2 km grid, this represents approximately 200 pixels over which data was obtained for the metropolitan area.
+
+Another major component of the model is an urban air temperature model that takes GOES-16 LST product data as an input and uses a diurnal regressive algorithm to calculate air temperature at a height of 2 m AGL \citep{Hrisko_2020},  from which $T_{air}$ (and through derivation, $\theta_r$) is obtained. The model has been shown to estimate air temperatures in areas featuring a range of land cover classes with high accuracy, specifically in urban areas (RMSE of 2.60 K relative to ground station observations),  and is spatially representative when compared to ASOS observation data (see the next section for more information). Inputs to the model are LST, elevation, NLCD land cover class, and coordinates. The model output is a gridded dataset with temperature values. For reference, the data is produced on a 2 x 2 km grid to match the gridded data format of the GOES-16 LST product. 
+
+\subsection{Ground station observation data}  \label{methodology-ground-station}
+Model inputs for air pressure ($p$) and wind speed ($u_r$) were obtained from various Automated Surface Observing System (ASOS) stations in the New York City metropolitan area. The ASOS network, which is operated by NOAA, features over 900 sites in the United States, allowing for weather conditions at many locations within the continental United States to be adequately represented by ASOS data.
+
+Each ASOS station collects a wealth of information regarding weather conditions most relevant for aviation purposes, including air temperature, dew point temperature, air pressure, wind speed and direction, and sky cover. Each station generally records data at a frequency of 5 minutes, providing reasonable spatial and excellent temporal frequencies for model data input. Four stations are located within the spatial domain evaluated in this study (see Figure \ref{fig:roughness_height_map} for reference): John F. Kennedy International Airport (JFK) (40.6413° N, 73.7781° W), LaGuardia Airport (LGA) (40.7769° N, 73.8740° W), Newark Liberty International Airport (EWR) (40.6895° N, 74.1745° W), Central Park (40.7790° N,  73.9693° W). The ASOS stations closest to each observation site are selected for data collection. Specifically, these ASOS stations are JFK (corresponding to Brooklyn), LGA (Queens), and EWR (Staten Island).
+
+The model was validated using the New York State (NYS) Mesonet observation network \citep{NYS_Mesonet}. The network features 17 flux stations throughout the state of New York, with 3 stations located within New York City - one each in the boroughs of Brooklyn (BKLN) (40.6318° N, 73.9537° W), Queens (QUEE) (40.7343° N, 73.8158° W), and Staten Island (STAT) (40.6040° N, 74.1485° W). The flux network stations record parameters relevant to the surface energy budget, including net radiation $R_N$,  surface latent heat flux $Q_L$, and surface sensible heat flux $Q_H$.  Each flux station is equipped with a net radiometer (manufactured by Kipp \& Zonen CNR4), ground heat flux plates (Hukseflux), and a closed-path eddy covariance system (CPEC200, Campbell Scientific, Inc) consisting of a sonic anemometer and gas analyzer. The net radiometer and eddy covariance system are installed atop 10 m towers. The towers are mounted on buildings with heights of 23.20 m at the Brooklyn station, 44.60 m at the Queens station, and 23.10 m at the Staten Island station (all heights above ground level). For reference, average heights of surrounding buildings are 10.70 m in Brooklyn, 10.70 m in Queens, and 6.00 m in Staten Island, per New York City zoning areas \citep{NYCDOCP}. Station flux measurements are reported every 30 minutes. The eddy covariance system was used to measure $Q_H$ for the duration of the validation period. 
+
+These stations were used for validation because of their high temporal sampling frequency and their locations in areas of the city with surrounding land cover types representative of their respective boroughs, rendering them useful for validating a model intended to provide output with fine spatial resolution.  The Brooklyn station is located in a neighborhood with low- and mid-rise residential and commercial buildings with little open vegetated space (NLCD land cover classification codes "22 - Developed, Low Intensity", "23 - Developed, Medium Intensity", "24 - Developed, High Intensity"). The Queens station is similar to the Brooklyn location, with the exception of a large cemetery directly to the west that serves as an open vegetated space (NLCD land cover classification codes "22 - Developed, Low Intensity", "23 - Developed, Medium Intensity", "24 - Developed, High Intensity"). The Staten Island station is located on a university campus enveloped by deciduous forest on 3 sides and low-density residential on the 4th (NLCD land cover classification codes "22 - Developed, Low Intensity", "23 - Developed, Medium Intensity", "24 - Developed, High Intensity", "41 - Deciduous Forest"). See Figure \ref{fig:land_cover_map} for a map showing land cover classifications for New York City with flux station locations annotated. Each station is matched by coordinates to a corresponding GOES-16 satellite data pixel such that the pixel envelopes the station and its immediate surrounding area. The limitations of the siting of the validation stations and the station-satellite matching method are discussed later in the paper. NYS Mesonet data used for validation spans a full calendar year, from 1 June 2019 to 31 May 2020. All stations were operational and recorded data during the extent of the validation time period. 
+
+\subsection{Model performance against ground stations}
+The study period for the model spanned from 1 June 2019 (day of year 152) to 31 May 2020 (day of year 152).  Approximately 44 days over the course of the study period were selected for model validation. The selection criteria included sky cover classified as “CLR” (clear sky) or “FEW” (few clouds) at each ASOS observation station continuously over a 24-hour period and operational flux network status. For validation purposes, model runs were initially performed at the latitude and longitude corresponding to each flux station. The corresponding GOES-16 grid location, or pixel, was used for the LST and $T_{air}$. The closest ASOS station was used to provide inputs of $p$ and $u$ (the distance between the study location and the corresponding ASOS station is a potential source of error that is discussed further). In total, 3 pixels were analyzed for validation purposes at hourly intervals over the selected days, resulting in a total of approximately 3,200 data points. 
+
+\subsection{Urbanized Weather Research and Forecasting (uWRF) model} \label{methodology-uwrf}
+The WRF model \citep{Skamarock_2008} with an urbanization option (uWRF) is used in this study as a model-based data set against which the performance of the dedicated $Q_H$ model can be compared.  This supplements the comparison against an observation-based dataset provided by the Mesonet flux towers. The urbanization option features parameterizations specific to urban areas for better representation of boundary layer processes in cities \citep{Gutierrez_20152, Gutierrez_20153}. This configuration of the WRF model has been used in numerous previous studies to study atmospheric processes in urban areas \citep{Chen_2011, Gamarro_2019, Gutierrez_20151, Hrisko_2021, Ortiz_2017}.
+
+The uWRF was initialized with the North American Mesoscale (NAM) forecast at 12-km resolution. The uWRF was run on multi-domain mode centered over New York City with the following domain resolutions: 9 km (120x120 grid), 3 km (121x121), and 1 km (85x82) with 51 vertical levels; the first level was located at a height of 10 m with 30 additional levels below 1000 m. The uWRF was run for 4 days, chosen to be roughly characteristic of each season: 24 October 2019 (autumn), 23 December 2019 (winter), 20 January 2020 (winter), 12 May 2020 (spring). The model was run with the Dudhia scheme \citep{Dudhia_1989} for shortwave radiation and the Rapid Radiative Transfer Model for longwave radiation \citep{Mlawer_1997}. For the planetary boundary layer (PBL) parameterization, the Mellor-Yamada-Janjic scheme \citep{Janjic_1994} was used while the land surface fluxes for non-urban cover were parameterized using the NOAH scheme \citep{Niu_2011}. A cumulus parameterization was used for the coarser outer grid domains. For urban fluxes, the coupled Building Environment Parameterization and Building Energy Model (BEP-BEM) was used \citep{Salamanca_2010}. Land cover in New York City was represented by the Primary Land Use Tax Lot Output (PLUTO) database. 
+
+\subsection{Model performance evaluation}
+Four statistical measures were used to determine model performance relative to ground stations: root-mean-square error (RMSE), mean bias error (MBE), the Nash-Sutcliffe model coefficient (NSC), and the coefficient of determination ($R^2$).  NSC is a commonly-used statistic for model validation as a method to determine the accuracy of model predictions relative to observed data that may be highly variable due to perturbations (such as wind) \citep{Legates_1999, Nash_1970}. An NSC value greater than 0.50 is considered as denoting satisfactory model performance \citep{Moriasi_2007}. 
+
+Each measure is defined as follows:
+
+\begin{equation} \label{eq:RMSE}
+    RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N}(Q_{H, i, model} - Q_{H, i, observed})^2}
+\end{equation}
+\begin{equation} \label{eq:MBE}
+    MBE = \frac{1}{N} \sum_{i=1}^{N} (Q_{H, i, model} - Q_{H, i, observed})
+\end{equation}
+\begin{equation} \label{eq:NSC}
+    NSC = 1 - \frac{\sum_{i=1}^{N} (Q_{H, i, model} - Q_{H, i, observed})^2}{\sum_{i=1}^{N}(Q_{H, i, observed} - \mean{Q_{H, observed}})^2}
+\end{equation} 
+\begin{equation} \label{eq:R2}
+    R^2 = 1 - \frac{\sum_{i=1}^{N}(Q_{H, i, model} - \mean{Q_{H, i, observed}})^2}{\sum_{i=1}^{N}(Q_{H, i, observed} - \mean{Q_{H, observed}})^2}
+\end{equation}
+
+\section{Results}
+
+\subsection{Overall results}
+In the timeframe studied, the dedicated $Q_H$ model featured a RMSE of 47.32 $W m^{-2}$, a bias of 16.58 $W m^{-2}$, an NSC value of 0.54, and a $R^2$ value of 0.70. The overall results are visualized in Figure \ref{fig:overall-scatter}. Statistical results of the study period, as defined in Equations \ref{eq:RMSE}-\ref{eq:R2}, are shown in Table \ref{tab:performance-stats} decomposed by location. The performance statistics suggest the model displayed reasonable agreement with the ground observations and performed satisfactorily, per the definition provided for the Nash-Sutcliffe coefficient by \citet{Moriasi_2007}.  Model performance as a function of spatial and temporal variability will be discussed in this section. Temporal variability will be discussed on two distinct timescales, seasonal and daily, to improve understanding of model behavior and differences driven by changes in time on large and small temporal scales.  Nonetheless, the model showed considerable error from the ground observation data, and potential causes will be addressed further in the paper. 
+
+\begin{table}[ht]
+\centering
+\caption{Model performance statistics against ground station data over the study period (2019 June - 2020 May). RMSE and MBE have units of $W m^{-2}$.}
+    \begin{tabular}[t]{lccccc}
+        \hline
+        Station & Points & RMSE & MBE & NSC & $R^2$ \\
+        \hline
+        BKLN & 1149 & 59.26 & 29.99 & 0.26 & 0.70 \\
+        QUEE & 1165 & 43.52 & 15.97 & 0.63 & 0.75 \\
+        STAT & 1160 & 36.21 & 3.79 & 0.70 & 0.73 \\
+        \hline
+    \end{tabular}
+    \label{tab:performance-stats}
+\end{table}
+
+\begin{figure}[ht!]
+    \centering
+        \includegraphics[width=0.5\textwidth]{Figures/fig5.pdf}
+    \caption{Comparison of model and observed $Q_H$ for all stations from 1 June 2019 to 31 May 2020.}
+    \label{fig:overall-scatter}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Diurnal variability} \label{section:results-diurnal-variability}
+
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.33\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/fig6a.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.33\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/fig6b.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.33\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/fig6c.pdf}
+    \end{minipage}\hfill
+    \caption{Comparison of model and observed $Q_H$ for all stations divided into distinct periods of the day. (from left to right) Early morning (pre-sunrise), daytime, evening and late night (post-sunset).}
+    \label{fig:diurnal-seasonal-scatter} 
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.75\textwidth]{Figures/fig7.pdf}
+    \caption{Seasonal averages of daily $Q_H$, averaged over all stations. For reference, the acronyms reflect their represented months (for example, 'JJA' corresponds to June, July, and August). All times are in local standard time (LST) and background shading corresponds approximately to average day and night durations for the respective season. }
+    \label{fig:quee-timeseries}
+\end{figure}
+
+Performance of the model against observed data over distinct portions of the day is displayed in Figure \ref{fig:diurnal-seasonal-scatter}. The model performed fairly well during the daytime (6:00 - 16:00 local standard time), with good agreement between the model and the observations across all stations (RMSE = 48.68 $W m^{-2}$, MBE = 6.99 $W m^{-2}$, NSC = 0.58, $R^2$ = 0.61). However, the model did not perform as well in the early nighttime hours due to an increased bias error (16:00 - 0:00 local standard time) (RMSE = 44.98 $W m^{-2}$, MBE = 21.39 $W m^{-2}$, NSC = 0.40, $R^2$ = 0.66 across all stations) and poorly during the pre-dawn hours due to a lack of correlation between modeled and observed data (0:00 - 6:00 local standard time) (RMSE = 48.04 $W m^{-2}$, MBE = 26.17 $W m^{-2}$, NSC = -1.65, $R^2$ = -0.30 across all stations). As shown in Figure \ref{fig:quee-timeseries}, these diurnal performance trends are further supported by seasonal diurnal averages taken for each season over all stations. The model performs considerably well during daytime hours, especially in the summer (JJA) and autumn (SON) months. However, the model consistently underestimates $Q_H$ during nighttime hours - especially so in the winter (DJF) months. The performance error during the pre-dawn hours is likely due to estimation biases in the remote sensing methods used and will be discussed later in the paper.
+
+\FloatBarrier
+
+\subsubsection{Seasonal variability} \label{section:results-seasonal-variability}
+
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.75\textwidth]{Figures/fig8.pdf}
+    \caption{Comparison of model and observed $Q_H$ divided into seasons. Note that the acronyms correspond to months in each season (for example, 'JJA' corresponds to June, July and August).}
+    \label{fig:seasonal-scatter}
+\end{figure}
+
+The model exhibited variability in performance relative to the season during which runs were performed.  As shown in Figure \ref{fig:seasonal-scatter}, the model appears to perform better in warmer months [summer (JJA) and spring (MAM)] than in cooler months. This is evident in the $R^2$ values of each season (0.80 and 0.79 for JJA and MAM, respectively) as compared to cooler months [autumn (SON) and winter (DJF)], which feature lower $R^2$ values (0.72 and 0.56, respectively). Model error was more prevalent in the winter (DJF) and spring (MAM) months relative to the summer (JJA) and fall (SON) months largely due to nocturnal model underprediction,  as shown in Figure \ref{fig:seasonal-error}.  Analysis regarding seasonal variability in model results and performance is discussed further in Section \ref{section:discussion-model-variability}.
+
+\begin{figure}[ht!]
+    \centering
+        \includegraphics[width=0.75\textwidth]{Figures/fig9.pdf}
+    \caption{$Q_H$ error between model results and observational data, averaged per season per location. For reference, the acronyms reflect their represented months (for example, 'JJA' corresponds to June, July, and August).}
+    \label{fig:seasonal-error}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Geospatial variability} \label{section:results-geospatial-variability}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.75\textwidth, trim=3 3 3 3,clip]{Figures/fig10.pdf}
+    \caption{$Q_H$ (W $m^{-2}$) in New York City on 24 October 2019 shown at 4 different times during the daytime. Note that all times are in local standard time (LST).}
+    \label{fig:q_h_spatial}
+\end{figure}
+
+The spatial distribution of $Q_H$ was of interest in this study due to the heterogeneity of the land cover types present within the metropolitan area. The spatial distribution of $Q_H$ at different times during a day in late October 2019 is shown in Figure \ref{fig:q_h_spatial}. The $Q_H$ at 10:00 local standard time is shown to be positive at almost every pixel with relatively low magnitudes (\textless 100 W-$m^{-2}$), which is within the expected range of values for the mid-morning. At 13:00 local standard time, $Q_H$ is near its peak value in most neighborhoods, with values nearing 300 W-$m^{-2}$ in sections of Queens and Newark. Decreasing values towards the northwestern outer edges (upper-left of the plot) of the metropolitan area correspond to areas with significant vegetative cover in suburban areas. At 16:00 local standard time, $Q_H$ is seen to be decreasing from its peak value, which is a result of the surface layer air temperature increasing and approaching the land surface temperature. At 19:00 local standard time, $Q_H$ nears zero as the sun sets and the land surface temperature decreases. Note that areas on the outer edges of the metropolitan area begin to display negative values of $Q_H$ (sensible heat flux directed towards the surface) while more highly-urbanized areas continue to demonstrate positive $Q_H$. This correlates with the elevated heat storage ($Q_S$) that has been found to last longer into the nighttime hours in urban areas as compared to rural areas \citep{Grimmond_1999, Hrisko_2021}.
+
+Based on the results presented in Table \ref{tab:performance-stats}, it is apparent that Staten Island (STAT) features better model correlation than Brooklyn (BKLN) or Queens (QUEE) over all metrics except $R^2$, although it is similar in value to the other 2 stations. The Staten Island flux tower is located in a less urbanized vicinity than the others (57.48\% developed, per NLCD classifications) compared to Brooklyn (99.73\% developed) and Queens (82.16\% developed). This disparity in urbanization may indicate that land cover properties may be more homogeneous and extraneous heating sources (i.e. building processes, exhaust from utilities) may play less of a role in near-surface heating than in more heavily-urbanized areas. However, to properly determine any correlation between land cover type and model performance, validation is needed against additional flux towers over a wider range of land cover types within the city to increase confidence in any observed trends.
+
+\FloatBarrier
+
+\subsection{Model performance against uWRF}
+
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.75\textwidth]{Figures/fig12.pdf}
+        \caption[short for lof]{Observed and modeled (uWRF and dedicated) $Q_H$ at days selected for uWRF study at the Queens (QUEE) station. Note that 'SON' represents the date 24 October 2019, 'DJF-1' represents 23 December 2019, 'DJF-2' represents 20 January 2020, and 'MAM' represents 12 May 2020.}
+    \label{fig:wrf-timeseries}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.455\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, trim=6 6 6 6,clip]{Figures/fig13a.pdf} % first figure itself
+    \end{minipage}\hfill
+    \begin{minipage}{0.545\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, trim=6 6 6 6,clip]{Figures/fig13b.pdf} % second figure itself
+    \end{minipage}\hfill
+    \caption{Gridded maps showing error between dedicated $Q_H$ and uWRF models, October 24, 2019 at 4:00 local standard time (left) and 14:00 local standard time (right). Light blue pixels correspond to areas with mostly covered in water/marsh.}
+    \label{fig:wrf-meshgrid}
+\end{figure}
+
+As noted in Section \ref{methodology-uwrf}, the uWRF model was used as an model-based data set against which performance of the dedicated $Q_H$ model could be compared. Additionally, comparison with the uWRF model provides the ability to validate the dedicated $Q_H$ model over a continuous spatial extent not afforded by the single-point observation stations. The model was run on 4 separate days, for 24 hours each: 24 October 2019 (SON), 23 December 2019 (DJF-1), 20 January 2020 (DJF-2), and 12 May 2020 (MAM). The spatial pixel nearest to each ground station was used for comparison. Each ground station used in the $Q_H$ to ground station validation study (BKLN, QUEE, STAT) was selected to produce the comparison.
+
+Over the days analyzed in the study, the RMSE between the uWRF model and ground observation stations was 108.07 $W m^{-2}$, with a MBE of -30.11 $W m^{-2}$, a NSC of -1.47, and a $R^2$ of 0.63. The performance statistics show considerably poorer performance than the dedicated $Q_H$ model, relative to observed data. The uWRF model consistently overpredicted daytime $Q_H$ (see Figures \ref{fig:wrf-timeseries} and \ref{fig:wrf-meshgrid}), although it predicted nocturnal $Q_H$ more accurately than the dedicated $Q_H$ model. A notable example of overprediction is evident in the MAM model run (12 May 2020), where a $Q_H$ value of 600 $W m^{-2}$ was simulated. This significant overprediction is primarily a result of overestimated surface wind speeds by the uWRF model \citep{Bauer_2020}. \FloatBarrier
+
+
+\section{Discussion}
+
+\FloatBarrier
+
+\subsection{Model sensitivity analysis}
+
+An analysis of model sensitivity to input parameters was performed to determine the response of the model to inputs. The analysis evaluates 5 input parameters: $T_{LST}$, $T_{air}$, $h_0$, $u_{air}$, and $z_r$. These parameters were chosen due to their presence in every parameter involved in estimating $Q_H$, whether directly observed or derived. The analysis was performed by independently perturbing the value of each parameter above and below the original value by a defined quantity, such that the effect of each parameter could be observed individually. Model sensitivity is defined as the percentage error of $Q_H$ between the model runs with modified input parameter values and unmodified input values. Parameter perturbation values are shown in Table \ref{tab:sensitivity-analysis-stats}. Results from the sensitivity analysis are shown in Table \ref{tab:sensitivity-analysis-stats} and Figure \ref{fig:sensitivity-study} categorized by location and atmospheric stability, $\zeta$. For reference, stability values are categorized into 'unstable', 'neutral', and 'stable', corresponding to values of $\zeta$ $<$ -0.25, -0.25 $\leq$ $\zeta$ $<$ 0.25, and 0.25 $\leq$ $\zeta$, respectively.
+
+Results show high model sensitivity to $T_{LST}$, $T_{air}$, with lesser but significant sensitivity to $u_{air}$ (wind speed), and minor sensitivity to $h_0$ (element roughness height) and $z_r$ (reference height). This order of sensitivity to perturbed parameters is similar to the sensitivity analysis results presented in a study by \citet{Feigenwinter_2018}. The high sensitivity of flux estimation to temperature is observed in the literature \citep{Brenner_2017, Cammalleri_2012, Xia_2016} and may also be a function of the 2-km spatial resolution of the surface and air temperature gridded data, as shown by results from both \citet{Mott_2015} and \citet{Xu_2008}, where an increase in grid resolution significantly altered model results. With regards to location, model sensitivity to all parameters is similar across all 3 validation locations, with the exception of higher sensitivity to $T_{LST}$ and $T_{air}$ at Staten Island. A potential cause for this additional sensitivity is the mixture of land cover types that have very different properties within the same GOES-16 satellite pixel, namely deciduous forest (NLCD class 41) and medium-density developed land (NLCD class 23) \citep{Yang_2018}. With regards to atmospheric stability, the model was most sensitive to temperature perturbations during periods of near-neutral conditions, with moderate sensitivity to wind speed perturbations in non-neutral regimes. It is worth noting that the model is less sensitive to perturbations over all parameters during periods of instability, likely due to enhanced mixing and homogenization of properties through the majority of the boundary layer depth \citep{Garratt_1994, Stull_1988}.
+
+\begin{table}[!h]
+\centering
+\caption{Model sensitivity analysis inputs, perturbation values, and results.}
+    \begin{tabular}[t]{lccccc}
+        \hline
+        Parameter & Location & Perturbation Value & 1st Quartile Error (\%) & 3rd Quartile Error (\%) \\
+        \hline
+        \multirow{3}{*}{$T_{air}$} & BKLN &   & -13.15 & 13.11 \\
+                                   & QUEE & $\pm$ 0.5 K & -13.23 & 13.21 \\
+                                   & STAT &   & -18.95 & 18.89 \\
+        \multirow{3}{*}{$T_{LST}$} & BKLN &   & -13.30 & 13.30 \\
+                                   & QUEE & $\pm$ 0.5 K & -13.15 & 13.11 \\
+                                   & STAT &   & -19.09 & 19.10 \\
+        \multirow{3}{*}{$h_0$} & BKLN &   & -4.47 & 4.56 \\
+                                   & QUEE & $\pm$ 0.5 m & -3.48 & 3.48 \\
+                                   & STAT &   & -5.04 & 5.10 \\
+        \multirow{3}{*}{$u_{air}$} & BKLN &   & -11.74 & 9.30 \\
+                                   & QUEE & 1 $m s^{-1}$ & -13.13 & 10.77 \\
+                                   & STAT &   & -12.73 & 10.53 \\
+        \multirow{3}{*}{$z_r$} & BKLN &   & -2.05 & 2.20 \\
+                                   & QUEE & 1 m & -1.00 & 1.04 \\
+                                   & STAT &   & -1.81 & 1.93 \\
+        \hline
+    \end{tabular}
+    \label{tab:sensitivity-analysis-stats}
+\end{table}%
+
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/fig11a.pdf} % first figure itself
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/fig11b.pdf} % second figure itself
+    \end{minipage}\hfill
+    \caption{Left: Model sensitivity to each parameter represented by error from baseline values categorized by location (left) and atmospheric stability, $\zeta$ (right).}
+    \label{fig:sensitivity-study} 
+\end{figure}
+
+
+\FloatBarrier
+
+\subsection{Comparison with other studies}
+There is some difficulty in directly comparing this model with other estimation methods due to the lack of studies evaluating the performance of estimation methods for $Q_H$ in urban areas over a continuous time period using remote sensing methods in the reviewed literature. Although a large body of work exists for proposing and evaluating methods for assessing surface fluxes using remotely-sensed data, these studies  primarily focus on the estimation of evapotranspiration and latent heat fluxes in agricultural, forested,  or grassland areas. For this reason, these studies are not comparable to the work presented herein. Therefore,  this section will attempt to commpare the performance of the model described herein to the performance of other studies that estimate $Q_H$ in both urban and rural areas using remote sensing methods.
+
+Several studies have used airborne methods to estimate $Q_H$ over rural areas. In \citet{Cammalleri_2012}, aircraft-mounted multispectral and thermal cameras were used in conjunction with meteorological data to estimate $Q_H$ over 7 days within a 4 month period, with a study area covered by cropland, fallow soil, and bare soil. Using small aperture scintillometers to validate estimated values, the study found errors ranging from -35 to 20 W-$m^{-2}$, which are small but not negligible for the reported flux values. It is worth noting that this study uses 2 distinct numerical methods to estimate $Q_H$, both featuring  reasonable accuracy.  \citet{Kim_2019} used unmanned aerial vehicles (UAVs) over the course of 11 flights to evaluate fluxes a variety of land cover types in rural areas over a range of synoptic meteorological conditions. A bulk parameterization method was used to estimate $Q_H$, with eddy covariance and scintillometry used as validation methods. This study found a correlation coefficient (R) of 0.94, with a RMSE of -1.26 W-$m^{-2}$, and a MBE of 19.91 W-$m^{-2}$. \citet{Ortega-Farias_2016} described using an unmanned aerial vehicle (UAV) over an orchard over 10 days between February and March 2014 to estimate fluxes. Using eddy covariance methods for validation, the study found a RMSE of 56.00 W-$m^{-2}$ and a mean average error (MAE) of 46.00 W-$m^{-2}$.  All studies showed promising methods for estimating $Q_H$ using airborne measurements as all features good agreement between estimation and validation methods. 
+
+Fewer studies have used satellite imagery to estimate $Q_H$ with comprehensive validation measures. \citet{Miglietta_2009} describes an estimation method using Meteosat land surface temperature and radiation products, as well as aircraft-mounted sensors, to evaluate fluxes over forested areas and cropland between May and June 2005. Using eddy covariance methods to observe flux values,  the study reported reasonable agreement between estimated and observed temperature and net radiation values, although $Q_H$ overestimation ranged up to 30\% over the study period.  \citet{Mkhwanazi_2012} used Landsat 5 imagery with a bulk parameterization method to evaluate fluxes over an alfalfa field in rural Colorado.  Despite good correlation ($R^2$ = 0.80) and moderate errors (RMSE = 59.60 W-$m^{-2}$, MBE = 31.79 W-$m^{-2}$), the Nash-Sutcliffe coefficient was negative, indicating suboptimal model performance. \citet{Feigenwinter_2018} used Landsat 8 imagery over an urban area (Basel, Switzerland) over 22 days between 2013 and 2015 with 3 flux towers used as validation. This study provided the most comparable estimation method of fluxes in an urban areas to the knowledge of the authors, with specific information regarding urban land cover types and similar validation methods. The study found good agreement between estimated and observed values, of $Q_H$, with an overall $R^2$ value of 0.71 and an RMSE of 54.00 W-$m^{-2}$, indicating performance similar to that of the model described herein.
+
+Although these methods present novel and effective ways of estimating $Q_H$, the main shortfalls include spatial and temporal variability in the results presented.All airborne and most of the satellite-based estimation methods are confined to rural areas, which are dominated by homogeneous land cover types,  none of which are urban or built-up land cover types. Additionally, all estimation methods reviewed in the literature rely on temporally infrequent or disjoint data acquisition methods, some of which are especially costly (non-UAV airborne missions). Because of these issues, a proper evaluation of model performance as a function of land cover heterogeneity (especially in urban areas) and diurnal and seasonal meteorological conditions is difficult to perform, if at all possible. The work presented in this paper attempts to present a unique approach to address these shortcomings to allow for such an estimation method, and an evaluation with regards to the discussed parameters, to exist.
+
+\subsection{Model variability \& performance} \label{section:discussion-model-variability}
+Model performance will be discussed in this section with regards to diurnal, seasonal, and geospatial characteristics. 
+
+The model performs much better during the day, as shown in Figure  \ref{section:results-diurnal-variability}. The difference in performance could be related to the prevailing atmospheric conditions; daytime transport of heat is facilitated by thermals (buoyancy-generated turbulence) that are highly efficient in mixing heat and other scalars. In urban areas, the largest thermals could be of the size of the boundary layer, on the order of 1-2 km, which is close to the spatial resolution of GOES-16 pixels. In stark contrast, during the nighttime hours, when the urban atmosphere is less convectively active, the transport is mainly dominated by mechanical turbulence through wind shear, which is highly localized. Additionally, the wind field used in the model to derive $u*$ is obtained from an ASOS station that might be unrepresentative of the nearest GOES-16 LST pixel. This error source is discussed further in the next section.
+
+The model performed best in the summer (JJA) and the worst in the winter (DJF). As referenced in Section \ref{section:results-geospatial-variability}, daytime model overprediction and nocturnal model underprediction was highest in winter (DJF) and spring (MAM) months. Model error in winter and spring months may be explained by a couple of different factors. One potential cause is the increased frequency of midlatitude cyclones affecting the northeastern United States in winter and spring months as compared to summer months \citep{Gedzelman_2003}. The meteorological impacts of these events include increased wind speeds, a shift from westerly to northerly surface winds, and advected air masses from nearby bodies of water (namely, Long Island Sound and the Atlantic Ocean). These events may exacerbate disparities in wind speed differences between the source of wind measurement data, which are all within very close proximity to the coast (JFK is directly on Jamaica Bay and is ~3.5 km from the Atlantic Ocean, LGA is directly on Long Island Sound, EWR borders Newark Bay and is ~8 km from Upper New York Bay), and the locations where flux estimates are made, which are further removed from the coast (BKLN is ~5 km from Jamaica Bay, QUEE is ~3 km from Long Island Sound, STAT is ~6 km from Lower New York Bay). Additionally, the advected cold air masses during these events tend to cause temperature inversions that may increase errors in estimating $T_{LST}$ and $T_{air}$ by remote sensing methods \citep{Tang_2016}. This disparity in wind speeds may cause higher $u*$ values, resulting in estimation errors of $Q_H$ since it is proportional to $u*$. Another potential cause of model error is the seasonal variability in the mean mixed layer height of the boundary layer. Numerous studies of boundary layer structure climatology in urban areas reveal that mixed layer height is generally lowest in winter months \citep{Kamp_2010, Moreira_2020}. A lower mixed layer height is indicative of less mixing of scalars (such as temperature), leading to a less homogeneous boundary layer where the effects of surface forcings remain more localized as compared to a boundary layer with more mixing and a more uniform composition. This localization of the effects of surface forcings on the mixed layer may result in a disparity in results due to the difference in location between the location of the ASOS observation stations and the locations of the flux towers, the latter of which is where the model is run and validated.
+
+The geospatial variability of $Q_H$ in coastal areas is high, in part, due to the complex boundary layer formed by the combination of a marine and urban boundary layer \citep{Melecio-Vazquez_2018, Thompson_2007}. $Q_H$ and its transport may be influenced by advective phenomena such as sea breezes, which are further amplified by the sharp transitions between different land cover types, such as the transition from water to a highly-developed urban area, as exists along the portions of New York City bordering the Hudson and East Rivers, Long Island Sound, or the Atlantic Ocean \citep{Bou-Zeid_2020, Lee_2015, Thompson_2007}. The inability to explicitly capture the influence of advection on $Q_H$ is a limitation of this model. Additionally, the 2 km spatial resolution of GOES-16 satellite data is unable to properly capture areas with sharp land cover transitions on land, such as the one at the Staten Island (STAT) flux tower (see Figure \ref{fig:land_cover_map}), which may introduce significant bias into the estimation. This is discussed in greater detail in Section \ref{section:potential-sources-of-error}.
+
+\subsection{Potential sources of error} \label{section:potential-sources-of-error}
+
+Numerous assumptions were made in the development of the model that may have contributed to model error. 
+
+A likely source of model error stemmed from the spatial resolution of the GOES-16 LST product. The LST product features pixels at a spatial resolution of 2 km, which translates to 196 pixels spanning the New York City area (approximate land area of 778 $km^2$). Although this allows for fragmentation of the city into pixels that can distinguish districts (such as boroughs for New York City) from each other, GOES-16 LST pixel sizes are still considered large relative to the source areas for the flux measurements due to the spatial heterogeneity the observed areas. Because of the mismatch in pixel and source area size, contributions from localized phenomena such as urban street canyons and vegetated spaces may not be accounted for \citep{Erell_2006, Xiaomin_2006}. This is important due to the highly variable land cover types that exist between neighborhoods in large cities such as New York City \citep{Hamstead_2015}. 
+
+Another potential source of error arises from biases in estimation methods for $T_{LST}$ and $T_{air}$ used in this model. The GOES-R Land Surface Temperature product has been shown to have an average precision error of 1.58 K when tested over 6 rural locations \citep{Yu_2011}. It is worth noting validation for this product has not been performed in urban areas, to the authors' knowledge. The air temperature model used features an RMSE of 2.6 K and a bias of 0.8 K \citep{Hrisko_2020}. Additionally, this air temperature model featured a cold bias during nighttime hours and a warm bias during daytime hours, leading to under- and over-prediction respectively.  Moreover, the anisotropy of satellite retrievals in mid- to high-latitude areas (such as New York City) with significant urban canopies may contribute to warm biases in estimations of $T_{LST}$ \citep{Vinnikov_2012, Wang_2021}, especially during the winter months. The combined errors, in conjunction with the high model sensitivity to both $T_{LST}$ and $T_{air}$, can cause significant errors in estimating $Q_H$, especially during nighttime hours.
+
+Another potential source of error comes from the selection of $h_0$ for land cover types classified as "urban" (Developed, High Intensity; Developed, Medium Intensity; Developed, Low Intensity; per the NLCD). The assumed values were derived from the WRF-ARW model assumptions. However, the values may vary widely from city to city, depending on the average heights of buildings in each. In a city with a large number of tall buildings (\textgreater 10 m) such as New York City, larger values of $h_0$ for each class may be more suitable to properly parameterize the boundary layer wind profile. 
+
+It should be noted that eddy covariance measurements in urban areas are subject to many limitations \citep{aubinet_vesala_papale_2012}. One such limitation arises from the inability to represent the surrounding vicinity as a single land cover type. Another limitation is caused by the installation of eddy covariance systems in proximity of or on top of buildings, as the effects of flow distortion can create a local flow environment that is not representative of the surrounding environment. The presence of obstructions in the flow path may result in biased data if obstructions of similar height to the station elevation are upstream of the flow, resulting in some distortion. For the Queens station in particular, easterly flows would result in some bias due to buildings of similar height due east of the flux tower. However, the winds at each station were primarily from the west over all days evaluated in the study, with over 75\% of all winds recorded possessing a westerly component. This indicates that a majority of the observational data is not affected by flow distortion due to nearby obstructions, thus increasing confidence in the observational data as a valid reference. Moreover, the stations are minimally affected by obstructions upstream due to their prominence over buildings upstream of the flow. Additionally, it is worth noting that the building upon which the flux tower is installed may produce some localized flow distortion which could affect observations \citep{Oke_2017, Wang_2021_LES}. However, due to  logistical and safety issues, it is often difficult to find locations in cities that satisfy all the conditions required for an ideal reference for validation purposes. Therefore, we use the flux data as reference to compare our model results and fully acknowledge the limitations in using them. Finally, advances in modeling like the one we have proposed here could pave the way to reduce our dependence on eddy covariance measurements to quantify heat fluxes in urban areas.
+
+A further source of error between the model and the NYS Mesonet observations is the distance between the ASOS stations, where wind speed data is collected, and the Mesonet flux stations, where flux data is collected. The ASOS stations used for data collection are all located at large airports that feature large expanses of flat surfaces surrounding the station instrumentation with minimal upwind obstructions. By comparison, each flux station is located in a moderately- to heavily-urbanized area, reducing the upwind fetch and exposing instrumentation to hyperlocal turbulence that is a direct function of the surrounding geometry \citep{Kastner_2004} Additionally, the highly heterogeneous land cover in the New York City metropolitan area has the potential to create highly-localized wind fields due to phenomena such as the urban street canyon effect in areas with tall buildings and sea breezes in coastal areas \citep{Park_2012, Thompson_2007}.  Methods to address limitations in location mismatches and point-based observational methods are addressed in Section \ref{section:future-work}.
+
+\subsection{Future work} \label{section:future-work}
+A number of factors from this study motivate future work to improve the accuracy of the model.
+
+A possible improvement to the model involves validation at a range of test sites with a variety of land cover types at different locations, both within New York City and in other urban areas. This allows for the model to be evaluated for a wider range of land cover types and permits the evaluation of model sensitivity to land cover type. Moreover,  due to the study focusing on one city, atmospheric conditions that are a function of location, such as air pressure or advective fluxes, may not be fully accounted for in this model, potentially requiring a modification of assumptions or parameter values.  A related additional improvement to the validation effort would be the use of scintillometry to obtain path-averaged flux observations that are more representative of urban land cover types, as opposed to point-based observations as used in this study \citep{Crawford_2017, Lee_2015, Nadeau_2009} due to the significant heterogeneity of land cover types in urban areas. 
+
+Another improvement to the model involves downscaling of the $z_m$ grid. A critical component of the model is the calculation of $z_m$, which is a factor in nearly every component of the turbulence parameterization. Due to the highly heterogeneous nature of urban areas, $z_m$ must be calculated at an extremely high spatial resolution to properly represent the corresponding land cover. Although the NLCD has a spatial resolution of 30 meters, the spatial resolution of the $z_m$ calculations is driven by the GOES-16 satellite spatial resolution. Therefore, a higher-resolution satellite or a downscaling algorithm for the GOES-16 LST product would likely improve the calculation of $z_m$ and in turn, the calculation of all dependent parameters.  Potential tools for increasing the spatial resolution of $Q_H$ through the fusion of higher-resolution datasets with GOES-16 satellite data, such as incorporation of remotely-sensed surface properties at higher resolutions (AVHRR or MODIS infrared band data) \citep{Bala_2019, chrysoulakis_urban_2018, Hrisko_2021}.
+
+The estimation of nocturnal sensible heat flux is another critical component to improving model accuracy. The model often underestimates nocturnal $Q_H$ relative to the observation sites despite good approximation during the day.  As discussed in Section \ref{section:potential-sources-of-error}, a cold bias in the estimation $T_{LST}$ during nighttime hours is a potential explanation for the negative $Q_H$ values predicted by the model. In contrast, observations show near-zero and positive $Q_H$ values at night as a result of the release of heat stored during the day, especially in the most urbanized portions of the study area \citep{Grimmond_1999, Hrisko_2021}. Correction for nocturnal temperature bias would better display the relationship between heat storage and $Q_H$ and improve model accuracy. Therefore, this topic requires further exploration.
+
+\subsection{Application potential}
+The dedicated $Q_H$ model leverages open-access satellite and land cover data that allows for a cost-effective way to analyze sensible heat flux in urban areas. The model enables $Q_H$ to be estimated at any point within the scope of the GOES-16 satellite imagery with reasonable accuracy, removing constraints to single-point observation stations. Consequently, the model can be used to identify a number of factors that contribute to or correlate with the effects of urban heat islands in major cities, which directly relate to the vulnerability of a neighborhood due to the effects of climate. The model is especially valuable in locations that are not in close proximity to flux observation stations. Additionally, the model can be used as a module for high-resolution numerical weather models to improve the spatial resolution of $Q_H$ estimation in areas of interest. Moreover, the geographical extent spanned by the GOES-16 satellite imagery allows the model to be used over wide swaths of the CONUS, allowing for $Q_H$ estimations to be performed efficiently over multiple urban areas using the same imagery data at hourly intervals.
+
+
+\section{Conclusions}
+A dedicated satellite-based model using NOAA's GOES-16 data to calculate sensible heat flux in urban areas was introduced. The model couples GOES-16 data and publicly-accessible land cover data in an iterative turbulence parameterization based on MOST to provide a product that is capable of calculating $Q_H$ in areas with highly heterogeneous land cover. The performance of the model was validated using an ample set of ground station observations in New York City. Additionally, the model was compared to an urbanized WRF model and performed significantly better relative to observational data. Accordingly, these validation and comparison procedures suggest that the dedicated model is reasonably accurate in estimating $Q_H$ in urban areas at sub-hourly timescales. 
+
+Over the duration of the validation period, the RMSE between the model and observational data was 47.32 $W m^{-2}$, with a MBE of 16.58 $W m^{-2}$, a model NSC of 0.54, and a $R^2$ of 0.70. This presents a significant improvement over the uWRF model run over fewer days in the same validation period (RMSE of 108.1 $W m^{-2}$, MBE of -30.1 $W m^{-2}$, NSC of -1.47 and $R^2$ of 0.63). The model performed especially well in warmer months ($R^2$ values of 0.80 and 0.79 for summer and autumn, respectively) and during the daytime and evening hours. 
+
+The development of a satellite-based $Q_H$ model demonstrates the potential of the use of satellite data for estimating atmospheric processes over large spatial and temporal domains. The ability to leverage this data for use in urban areas is valuable as this method resolves several limitations that are encountered in estimating atmospheric processes in areas with highly heterogeneous land cover and an insufficient observational infrastructure. This ability is especially important considering the impact of heat-related weather events on human populations, allowing for risk assessment and mitigation strategies to become better informed with improved supporting data.
+
+
+\section*{Acknowledgments}
+
+This study is supported and monitored by The National Oceanic and Atmospheric Administration – Cooperative Science Center for Earth System Sciences and Remote Sensing Technologies (NOAA-CESSRST) under the Cooperative Agreement Grant \verb|#|NA16SEC4810008. The authors would like to thank The City College of New York, NOAA-CESSRST program and NOAA Office of Education, Educational Partnership Program for fellowship support for Gabriel Rios. The statements contained within the manuscript/research article are not the opinions of the funding agency or the U.S. government, but reflect the author’s opinions. The research was also funded by the Department of Defense Army Research Office Grant No. W911NF2020126. This research is made possible by the New York State (NYS) Mesonet. Original funding for the NYS Mesonet was provided by Federal Emergency Management Agency grant FEMA-4085-DR-NY, with the continued support of the NYS Division of Homeland Security \verb|&| Emergency Services; the state of New York; the Research Foundation for the State University of New York (SUNY); the University at Albany, SUNY; the Atmospheric Sciences Research Center (ASRC) at SUNY Albany; and the Department of Atmospheric and Environmental Sciences (DAES) at SUNY Albany.  The authors would also like to thank the reviewers for their feedback, which has helped improve the quality of this paper. 

@@ -1,0 +1,22 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'thesis.blg'
+[64] biber-darwin:340> INFO - === Sat May 21, 2022, 15:40:23
+[80] Biber.pm:415> INFO - Reading 'thesis.bcf'
+[205] Biber.pm:952> INFO - Found 173 citekeys in bib section 0
+[218] Biber.pm:4340> INFO - Processing section 0
+[228] Biber.pm:4531> INFO - Looking for bibtex format file 'thesis.bib' for section 0
+[234] bibtex.pm:1689> INFO - LaTeX decoding ...
+[407] bibtex.pm:1494> INFO - Found BibTeX data source 'thesis.bib'
+[412] Utils.pm:395> WARN - Duplicate entry key: 'Chen_2011' in file 'thesis.bib', skipping ...
+[413] Utils.pm:395> WARN - Duplicate entry key: 'Lee_2015' in file 'thesis.bib', skipping ...
+[591] Utils.pm:395> WARN - legacy month field 'may' in entry 'Li_2014' is not an integer - this will probably not sort properly.
+[1107] Utils.pm:395> WARN - legacy month field 'May' in entry 'nws2018' is not an integer - this will probably not sort properly.
+[1194] Utils.pm:395> WARN - I didn't find a database entry for 'lamport1985:latex' (section 0)
+[1194] Utils.pm:395> WARN - I didn't find a database entry for 'Debr01' (section 0)
+[1368] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1368] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1368] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1368] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[1541] bbl.pm:654> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[1681] bbl.pm:757> INFO - Output to thesis.bbl
+[1681] Biber.pm:128> INFO - WARNINGS: 6

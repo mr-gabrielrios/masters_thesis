@@ -1,0 +1,50 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.5}%
+\contentsline {section}{\numberline {1.1}A few remarks before you start}{1}{section.6}%
+\contentsline {chapter}{\numberline {2}Estimating surface sensible heat flux using satellite data}{3}{chapter.7}%
+\contentsline {section}{\numberline {2.1}Background and introduction}{3}{section.8}%
+\contentsline {section}{\numberline {2.2}Methodology and data}{8}{section.9}%
+\contentsline {subsection}{\numberline {2.2.1}Study area}{8}{subsection.10}%
+\contentsline {subsection}{\numberline {2.2.2}Model overview}{10}{subsection.12}%
+\contentsline {subsubsection}{Sensible heat flux iterative algorithm}{10}{subsubsection*.14}%
+\contentsline {subsubsection}{Roughness height estimation}{13}{subsubsection*.24}%
+\contentsline {subsection}{\numberline {2.2.3}GOES-R land surface temperature (LST) product}{15}{subsection.27}%
+\contentsline {subsection}{\numberline {2.2.4}Ground station observation data}{17}{subsection.28}%
+\contentsline {subsection}{\numberline {2.2.5}Model performance against ground stations}{19}{subsection.29}%
+\contentsline {subsection}{\numberline {2.2.6}Urbanized Weather Research and Forecasting (uWRF) model}{19}{subsection.30}%
+\contentsline {subsection}{\numberline {2.2.7}Model performance evaluation}{20}{subsection.31}%
+\contentsline {section}{\numberline {2.3}Results}{21}{section.36}%
+\contentsline {subsection}{\numberline {2.3.1}Overall results}{21}{subsection.37}%
+\contentsline {subsubsection}{Diurnal variability}{22}{subsubsection*.40}%
+\contentsline {subsubsection}{Seasonal variability}{24}{subsubsection*.43}%
+\contentsline {subsubsection}{Geospatial variability}{25}{subsubsection*.46}%
+\contentsline {subsection}{\numberline {2.3.2}Model performance against uWRF}{27}{subsection.48}%
+\contentsline {section}{\numberline {2.4}Discussion}{29}{section.51}%
+\contentsline {subsection}{\numberline {2.4.1}Model sensitivity analysis}{29}{subsection.52}%
+\contentsline {subsection}{\numberline {2.4.2}Comparison with other studies}{31}{subsection.55}%
+\contentsline {subsection}{\numberline {2.4.3}Model variability \& performance}{33}{subsection.56}%
+\contentsline {subsection}{\numberline {2.4.4}Potential sources of error}{35}{subsection.57}%
+\contentsline {subsection}{\numberline {2.4.5}Future work}{38}{subsection.58}%
+\contentsline {subsection}{\numberline {2.4.6}Application potential}{39}{subsection.59}%
+\contentsline {section}{\numberline {2.5}Conclusions}{40}{section.60}%
+\contentsline {chapter}{\numberline {3}Boundary layer climatology of New York City}{43}{chapter.61}%
+\contentsline {section}{\numberline {3.1}Introduction}{43}{section.62}%
+\contentsline {section}{\numberline {3.2}Data collection and analysis}{48}{section.66}%
+\contentsline {subsection}{\numberline {3.2.1}Study sites}{48}{subsection.67}%
+\contentsline {subsection}{\numberline {3.2.2}Observational instruments}{51}{subsection.70}%
+\contentsline {subsubsection}{Data criteria \& availability}{52}{subsubsection*.71}%
+\contentsline {section}{\numberline {3.3}Normal and extreme heat boundary layer properties}{54}{section.72}%
+\contentsline {subsection}{\numberline {3.3.1}Temperature}{54}{subsection.73}%
+\contentsline {subsection}{\numberline {3.3.2}Moisture}{59}{subsection.77}%
+\contentsline {subsection}{\numberline {3.3.3}UBL dynamics}{61}{subsection.79}%
+\contentsline {subsubsection}{Horizontal winds}{61}{subsubsection*.80}%
+\contentsline {subsubsection}{Vertical motion}{67}{subsubsection*.85}%
+\contentsline {section}{\numberline {3.4}Effects of the sea breeze circulation}{69}{section.88}%
+\contentsline {subsection}{\numberline {3.4.1}UBL structure during sea breeze events}{73}{subsection.92}%
+\contentsline {subsection}{\numberline {3.4.2}UBL dynamics during sea breeze events}{74}{subsection.93}%
+\contentsline {section}{\numberline {3.5}Discussion and conclusions}{76}{section.95}%
+\contentsline {chapter}{\numberline {4}Body of my thesis}{83}{chapter.100}%
+\contentsline {section}{\numberline {4.1}Some results}{83}{section.101}%
+\contentsline {chapter}{\numberline {5}Conclusions}{85}{chapter.107}%
+\contentsline {section}{\numberline {5.1}Summary of the thesis}{85}{section.108}%
+\contentsline {chapter}{\numberline {A}Proof of xyz}{86}{appendix.109}%
