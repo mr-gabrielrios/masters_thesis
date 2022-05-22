@@ -1,7 +1,7 @@
 % This file contains all the necessary setup and commands to create
 % the preliminary pages according to the buthesis.sty option.
 
-\title{Understanding the relationship between the urban areas and the boundary layer using remote sensing methods}
+\title{Understanding the relationship between urban areas and the boundary layer using remote sensing methods}
 
 \author{Gabriel Angel Rios}
 
@@ -52,6 +52,12 @@
 \maketitle
 \cleardoublepage
 
+% Here goes your favorite quote. This page is optional.
+\newpage
+%\thispagestyle{empty}÷
+\input{0_Prelim/quote}
+\cleardoublepage
+
 % The acknowledgment page should go here. Use something like
 % \newpage\section*{Acknowledgments} followed by your text.
 \newpage
@@ -81,30 +87,52 @@
 
 % If you do not have tables, comment out the following lines
 \newpage
+\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 \cleardoublepage
 
 % If you have figures, uncomment the following line
 \newpage
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 \cleardoublepage
 
 % List of Abbrevs is NOT optional (Martha Wellman likes all abbrevs listed)
-\chapter*{List of Abbreviations}
-
-{\bf The list below must be in alphabetical order as per BU library instructions or it will be returned to you for re-ordering.}
+\chapter*{List of abbreviations and symbols}
 
 \begin{center}
   \begin{tabular}{lll}
     \hspace*{2em} & \hspace*{1in} & \hspace*{4.5in} \\
-    CAD  & \dotfill & Computer-Aided Design \\
-    CO   & \dotfill & Cytochrome Oxidase \\
-    DOG  & \dotfill & Difference Of Gaussian (distributions) \\
-    FWHM & \dotfill & Full-Width at Half Maximum \\
-    LGN  & \dotfill & Lateral Geniculate Nucleus \\
-    ODC  & \dotfill & Ocular Dominance Column \\
-    PDF  & \dotfill & Probability Distribution Function \\
-    $\mathbb{R}^{2}$  & \dotfill & the Real plane \\
+    ASOS  & \dotfill & Automated Surface Observation Station \\
+    $C_H$  & \dotfill & Bulk heat transfer coefficient \\
+    $h_0$  & \dotfill & Element roughness height \\
+    L & \dotfill & Obukhov length \\
+    LST  & \dotfill & Land surface temperature \\
+    MOST  & \dotfill & Monin-Obukhov similarity theory \\
+    NLCD  & \dotfill & National Land Cover Database \\
+    NWP  & \dotfill & Numerical weather prediction \\
+    PBL  & \dotfill & Planetary boundary layer \\
+    PBLH  & \dotfill & Planetary boundary layer height \\
+    q & \dotfill & Specific humidity \\
+    Re  & \dotfill & Reynolds number \\
+    $Q_H$  & \dotfill & Surface sensible heat flux \\
+    $Q_L$  & \dotfill & Surface latent heat flux \\
+    $Q_S$  & \dotfill & Storage heat flux \\
+    $T_air$  & \dotfill & \SI{2}{\meter} air temperature \\
+    $u_*$ & \dotfill & Friction velocity \\
+    u & \dotfill & Zonal wind component \\
+    U & \dotfill & Mean horizontal wind \\
+    UBL  & \dotfill & Urban boundary layer \\
+    UHI  & \dotfill & Urban heat island \\
+    USEB  & \dotfill & Urban surface energy budget \\
+    uWRF  & \dotfill & Urbanized Weather Research and Forecasting Model \\
+    v & \dotfill & Meridional wind component \\
+    w & \dotfill & Vertical wind component \\
+    z  & \dotfill & Height \\
+     & & \\
+    $\kappa$  & \dotfill & von Karman constant \\
+    $\theta$  & \dotfill & Potential temperature \\
+    $\zeta$  & \dotfill & Atmospheric stability \\
   \end{tabular}
 \end{center}
 \cleardoublepage

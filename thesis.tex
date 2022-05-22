@@ -32,6 +32,8 @@
 \usepackage{xcolor}
 % Handle tables
 \usepackage{tabularx, caption}
+\usepackage{array}
+\usepackage{makecell}
 % Handle figures
 \usepackage{graphicx, subcaption}
 % Handle paragraph formatting
@@ -48,6 +50,8 @@
 \usepackage[utf8]{inputenc} 
 % Handle math
 \usepackage{amsmath}
+\usepackage{setspace}
+
 \addbibresource{thesis.bib}
 
 %==========================================================================%
@@ -69,12 +73,15 @@ pdfborder={0 0 112.0}]{hyperref}%  % border-width of frames
 %\newcommand{\figref}[1]{Figure~\ref{#1}}
 %\newcommand{\chapref}[1]{Chapter~\ref{#1}}
 %\newcommand{\latex}{\LaTeX\xspace}
+\renewcommand{\cellalign}{l}
 %==========================================================================%
 
 %==========================================================================%
 % BEGIN
 %==========================================================================%
 \begin{document}
+
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
 
 % The preliminary pages
 \include{0_Prelim/prelim}        

@@ -38,7 +38,7 @@ This study attempts to use observations and analytical methods to provide insigh
   \item What effect does the sea breeze have on a coastal urban area during extreme heat events?
 \end{enumerate}
 
-This paper is organized as follows. Section \ref{section:data_methods} discusses the study area and the properties of the observation sites within it, the instruments used and their properties, as well as data statistics and quality filtering methods. Section \ref{section:normal_extreme_properties} presents observed and derived findings of UBL scalar properties and structure (temperature, moisture) and UBL dynamics. Section \ref{section:sea_breeze_effects} presents the effects of the sea breeze on New York City during normal days and days with extreme heat. The results presented in these sections are discussed, compared with findings from previous related studies, and summarized in Section \ref{section:discussion_conclusion}.
+This chapter is organized as follows. Section \ref{section:data_methods} discusses the study area and the properties of the observation sites within it, the instruments used and their properties, as well as data statistics and quality filtering methods. Section \ref{section:normal_extreme_properties} presents observed and derived findings of UBL scalar properties and structure (temperature, moisture) and UBL dynamics. Section \ref{section:sea_breeze_effects} presents the effects of the sea breeze on New York City during normal days and days with extreme heat. The results presented in these sections are discussed, compared with findings from previous related studies, and summarized in Section \ref{section:discussion_conclusion}.
 
 %%%%% Data collection and analysis
 
@@ -59,20 +59,22 @@ The New York City metropolitan area consists of over 20 million people \citep{bu
 Observational data was collected at three locations within New York City. The observational sites used for this study are located in the boroughs of The Bronx, Queens, and Staten Island, as shown in Figure \ref{fig:nyc_map}. Building heights from the New York  Primary Land Use Tax Lot Output database were aggregated and area-averaged for building height estimates shown in Table \ref{tab:observation_sites}. The Bronx is the northernmost borough of New York City and features a varying degree or urbanization, ranging from a mixture of medium- and high-rise residential buildings and industrial warehouses in the southeastern Bronx to low-density residential and open vegetated areas (e.g., Van Cortlandt Park) in the northern and western Bronx. The Bronx observation site is located on the campus of Lehman College, approximately \SI{3}{\kilo\meter} east of the Hudson River, and is surrounded by medium- and high-density residential and commercial areas on 3 sides with  a small reservoir (area of \SI{0.42}{\kilo\meter}$^2$) to the west. Queens in the easternmost borough of New York City and features high-density residential and commercial buildings in the western portion of the borough, medium- to high-rise residential building and industrial warehouses in the south, and low- to medium-density residential buildings and vegetated open spaces (e.g. Flushing Meadows Corona Park) in the central and eastern portions of the borough deeper into Long Island. The Queens observation site is located on the campus of Queens College, due east of Flushing Meadows Corona Park, and is surrounded by medium-density residential and commercial areas on 3 sides. Staten Island is the southernmost and westernmost borough of New York City, featuring significantly lower degrees of urbanization relative to the rest of New York City. Land use on Staten Island is predominantly low-density residential and commercial, with large open and forested spaces on the western portion (e.g., Freshkills Park) and central portion (Todt Hill Woodlands and Latourette Park). Additionally, Staten Island features more variable terrain relative to the rest of New York City, with modest hills reaching \SI{125}{\meter} at the highest point of the island. The Staten Island observation site is located on the campus of the College of Staten Island, which is surrounded by forested and low-density residential areas.
 
 %% Table displaying site information
-%\captionof{table}{Locations and details of observations sites.}
-%\begin{center}
-%	\label{tab:observation_sites}
-%	\begin{tabularx}{\textwidth}{X X X X X}
-% 		 \hline
-% 		  & Bronx & Queens & Staten Island \\
-% 		 \hline
-% 		Coordinates & 40.8725\textdegree N, -73.8935\textdegree E & 40.7343\textdegree N, -73.8159\textdegree E & 40.6040\textdegree N, -74.1485\textdegree E \\
-% 		Elevation (m a.g.l.) & 57.8 & 56.3 & 32.4 \\
-% 		Area-avgd. building height (m a.g.l.) & 9.23 & 6.22 & 5.24 \\
-% 		Area-avgd. NLCD land cover type & Developed, high density &  Developed, medium density & Developed, low density \\
-% 		\hline
-%	\end{tabularx}
-%\end{center}
+\captionof{table}{Locations and details of observations sites.}
+\begin{center}
+    \small
+	\label{tab:observation_sites}
+	\renewcommand{\arraystretch}{1}%
+	\begin{tabularx}{\textwidth}{X X X X X}
+ 		 \hline
+ 		  & Bronx & Queens & Staten Island \\
+ 		 \hline
+ 		\makecell{Coordinates} & \makecell{40.8725\textdegree N \\ -73.8935\textdegree E} & \makecell{40.7343\textdegree N, \\ -73.8159\textdegree E} & \makecell{40.6040\textdegree N, \\ -74.1485\textdegree E} \\
+ 		\makecell{Elevation (m a.g.l.)} & \makecell{57.8} & \makecell{56.3} & \makecell{32.4} \\
+ 		\makecell{Area-avgd. building \\ height (m a.g.l.)} & \makecell{9.23} & \makecell{6.22} & \makecell{5.24} \\
+ 		\makecell{Area-avgd. NLCD \\ land cover type} & \makecell{Developed, \\ high density} & \makecell{Developed, \\ medium density} & \makecell{Developed, \\ low density} \\
+ 		\hline
+	\end{tabularx}
+\end{center}
 
 \subsection{Observational instruments}
 Observations of the UBL were made using a synthesis of microwave radiometers, lidars, and satellites. 
@@ -88,7 +90,7 @@ Dates selected for this study are categorized into three groups: (1) normal days
 
 Observations from 102 days classified as normal and 87 days classified as extreme heat days were used for this study. The observation period lasted from June 2018 to September 2021 and days were selected between the months of May and September, as described previously. Quality filtering was performed for microwave radiometer and lidar data. For microwave radiometer data, the retrieval of vertical profiles of brightness temperature (from which derived values, such as temperature and vapor density) are obtained continuously through \SI{7}{\kilo\meter} above ground level with bi-weekly tip calibrations to reset the K-band \citep{shrestha2021}.  For lidar data, data with carrier-to-noise ratio (CNR) values below -27 dB were rejected \citep{kumer2014, shrestha2021} due to poor retrieval quality. 
 
-Microwave radiometer observation counts ranged between 200 and 250 hourly observation counts per site per selected height, with increased availability due to the robustness of the sensing method. The lower observation count at Staten Island is due to intermittent hardware issues preventing observations or storage of observational data. Lidar data observation counts (normal and extreme heat) average between 100 and 200 for every hour at 100, 500, and \SI{1000}{\meter} with lower counts at \SI{2000}{\meter} due to poor data availability because of increased scattering and noise. At lower heights, wind directions influenced by local factors result in higher observation counts from most directions with the exception of true northerly winds. As observation height increases, synoptic-scale factors dominate the observation count, with most observed winds coming from the west or southwest. Visualizations of observational statistics can be seen in the Appendix.
+Microwave radiometer observation counts ranged between 200 and 250 hourly observation counts per site per selected height, with increased availability due to the robustness of the sensing method. The lower observation count at Staten Island is due to intermittent hardware issues preventing observations or storage of observational data. Lidar data observation counts (normal and extreme heat) average between 100 and 200 for every hour at 100, 500, and \SI{1000}{\meter} with lower counts at \SI{2000}{\meter} due to poor data availability because of increased scattering and noise. At lower heights, wind directions influenced by local factors result in higher observation counts from most directions with the exception of true northerly winds. As observation height increases, synoptic-scale factors dominate the observation count, with most observed winds coming from the west or southwest.
 
 Using data from microwave radiometer and lidar observations, several quantities were derived to better understand UBL behavior. These quantities include mixing ratio, specific humidity, potential temperature, and mixed layer height. The methodology for these derivations is provided in the \ref{section:appendix}.
 
@@ -307,10 +309,11 @@ Specific humidity ($q$) was derived using Equation \ref{eqn:specific_humidity} a
 	q = \frac{w}{1+w} = \frac{\frac{\varepsilon \rho_v' R_v T}{p - \rho_v' R_v T}}{1+\frac{\varepsilon \rho_v' R_v T}{p - \rho_v' R_v T}} 
 \end{equation*}
 
-% Table displaying symbols used in the paper
-\captionof{table}{Symbols and abbreviations used in the paper.}
+% Table displaying symbols used in the 
+\captionof{table}{Symbols and abbreviations used in the chapter.}
 \label{tab:symbols}
 \begin{center}
+	\renewcommand{\arraystretch}{1}%
 	\begin{tabularx}{0.75\textwidth}{l X}
  		\hline
  		Symbol/Abbreviation & Definition \\
