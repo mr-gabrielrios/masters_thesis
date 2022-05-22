@@ -33,18 +33,19 @@
 \contentsline {section}{\numberline {3.1}Introduction}{47}{section.67}%
 \contentsline {section}{\numberline {3.2}Data collection and analysis}{52}{section.71}%
 \contentsline {subsection}{\numberline {3.2.1}Study sites}{52}{subsection.72}%
-\contentsline {subsection}{\numberline {3.2.2}Observational instruments}{55}{subsection.75}%
-\contentsline {subsubsection}{Data criteria \& availability}{56}{subsubsection*.76}%
-\contentsline {section}{\numberline {3.3}Normal and extreme heat boundary layer properties}{58}{section.77}%
-\contentsline {subsection}{\numberline {3.3.1}Temperature}{58}{subsection.78}%
-\contentsline {subsection}{\numberline {3.3.2}Moisture}{63}{subsection.82}%
-\contentsline {subsection}{\numberline {3.3.3}UBL dynamics}{65}{subsection.84}%
-\contentsline {subsubsection}{Horizontal winds}{65}{subsubsection*.85}%
-\contentsline {subsubsection}{Vertical motion}{71}{subsubsection*.90}%
-\contentsline {section}{\numberline {3.4}Effects of the sea breeze circulation}{73}{section.93}%
-\contentsline {subsection}{\numberline {3.4.1}UBL structure during sea breeze events}{77}{subsection.97}%
-\contentsline {subsection}{\numberline {3.4.2}UBL dynamics during sea breeze events}{78}{subsection.98}%
-\contentsline {section}{\numberline {3.5}Discussion and conclusions}{80}{section.100}%
-\contentsline {chapter}{\numberline {4}Conclusions}{87}{chapter.105}%
-\contentsline {section}{\numberline {4.1}Summary of the thesis}{87}{section.106}%
-\contentsline {chapter}{\numberline {A}Proof of xyz}{88}{appendix.107}%
+\contentsline {subsection}{\numberline {3.2.2}Observational instruments}{54}{subsection.74}%
+\contentsline {subsubsection}{Data criteria \& availability}{56}{subsubsection*.75}%
+\contentsline {section}{\numberline {3.3}Normal and extreme heat boundary layer properties}{57}{section.76}%
+\contentsline {subsection}{\numberline {3.3.1}Temperature}{58}{subsection.77}%
+\contentsline {subsection}{\numberline {3.3.2}Moisture}{62}{subsection.81}%
+\contentsline {subsection}{\numberline {3.3.3}UBL dynamics}{64}{subsection.83}%
+\contentsline {subsubsection}{Horizontal winds}{64}{subsubsection*.84}%
+\contentsline {subsubsection}{Vertical motion}{70}{subsubsection*.89}%
+\contentsline {section}{\numberline {3.4}Effects of the sea breeze circulation}{72}{section.92}%
+\contentsline {subsection}{\numberline {3.4.1}UBL structure during sea breeze events}{76}{subsection.96}%
+\contentsline {subsection}{\numberline {3.4.2}UBL dynamics during sea breeze events}{77}{subsection.97}%
+\contentsline {section}{\numberline {3.5}Discussion and conclusions}{79}{section.99}%
+\contentsline {chapter}{\numberline {4}Conclusions and Future Work}{85}{chapter.104}%
+\contentsline {section}{\numberline {4.1}Summary}{85}{section.105}%
+\contentsline {section}{\numberline {4.2}Limitations}{87}{section.106}%
+\contentsline {section}{\numberline {4.3}Future Work}{88}{section.107}%

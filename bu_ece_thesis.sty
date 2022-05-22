@@ -379,13 +379,14 @@ minus
 % Scientific-style bibliography: no number, first line indented backwards
 % Note that for proper citations apalike.bst BiBTeX style file and apalike.sty
 % Latex style file need to be used.
-\def\thebibliography#1{\def\baselinestretch{1.2}
+\def\thebibliography#1{\def\baselinestretch{1.3}
 %\section*{\centerline{References}}
 \chapter*{\centerline{References}}
 %\addcontentsline{toc}{section}{References}
 \addcontentsline{toc}{chapter}{References}
 \list
 {}{
+  \setlength{\bibsep}{0pt plus 0.3ex}
   \setlength{\itemindent}{-1em}
   \setlength{\leftmargin}{1em} 
 %  \setlength{\leftmargin}{0.6in} % Change suggested by Saikat Ray

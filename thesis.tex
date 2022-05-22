@@ -35,7 +35,9 @@
 % Handle figures
 \usepackage{graphicx, subcaption}
 % Handle paragraph formatting
+\edef\restoreparindent{\parindent=\the\parindent\relax}
 \usepackage{parskip}
+\restoreparindent
 % Add line numbers
 \usepackage{lineno}
 % Handle units
@@ -102,15 +104,9 @@ pdfborder={0 0 112.0}]{hyperref}%  % border-width of frames
 \include{5_Conclusions/conclusions}
 \cleardoublepage
 
-%\appendix
-\begin{appendices}
-\include{Appendix/Appendix}
-\end{appendices}
 %==========================================================================%
 % Bibliography
 \newpage
-\singlespace
-\bibliographystyle{apalike}
 
 % each subdirectory can have its own BiBTeX file
 % \bibliography{thesis}

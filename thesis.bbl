@@ -7378,6 +7378,43 @@
       \field{pages}{105\bibrangedash 109}
       \range{pages}{5}
     \endentry
+    \entry{rios2022novel}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=70bb35c85842e1e77e12196eb6ded6ff}{%
+           family={Rios},
+           familyi={R\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=2,uniquepart=given,hash=6750aea62dc2909791e3f9aa99d3582a}{%
+           family={Ramamurthy},
+           familyi={R\bibinitperiod},
+           given={Prathap},
+           giveni={P\bibinitperiod},
+           givenun=2}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d9c6ce5604a5d5a1dcb55461aa2b8272}
+      \strng{fullhash}{d9c6ce5604a5d5a1dcb55461aa2b8272}
+      \strng{bibnamehash}{d9c6ce5604a5d5a1dcb55461aa2b8272}
+      \strng{authorbibnamehash}{d9c6ce5604a5d5a1dcb55461aa2b8272}
+      \strng{authornamehash}{d9c6ce5604a5d5a1dcb55461aa2b8272}
+      \strng{authorfullhash}{d9c6ce5604a5d5a1dcb55461aa2b8272}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing of Environment}
+      \field{title}{A novel model to estimate sensible heat fluxes in urban areas using satellite-derived data}
+      \field{volume}{270}
+      \field{year}{2022}
+      \field{pages}{112880}
+      \range{pages}{1}
+    \endentry
     \entry{robinson2001}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=91b78814e5cde52a0f8919f4dd6b92e8}{%
