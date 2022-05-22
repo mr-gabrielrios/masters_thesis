@@ -2,69 +2,60 @@
 \label{chapter:Introduction}
 \thispagestyle{myheadings}
 
-\section{A few remarks before you start}
+\graphicspath{{1_Intro/}}
+
+\section{UBL conceptual overview}
+\label{sec:ubl_overview}
+
+The planetary boundary layer (PBL) is the lowest layer of the troposhere, within which the majority of human activities take place. The PBL is denoted by a logarithmic wind profile, where wind speeds are 0 at the surface (akin to the no-slip condition known in fluid mechanics), and increase with height until the PBL height (PBLH) is reached, which is where the wind speeds are approximately equal to those present in the prevailing flow \citep{garratt1994atmospheric}. The PBLH is a critical parameter in boundary layer metereology because it typically defines the extent of vertical mixing of scalars from the surface into the atmosphere. In other words, the higher the PBLH, the more mixing is occurring within the PBL \citep{garratt1994atmospheric, Stull_1988}. The importance and implications of this are discussed further throughout the thesis. A simplified diagram shown in \citep{Stull_1988} is presented in Figure \ref{fig:pbl_diagram}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/pbl_diagram.png}
+	\caption{Diagram of the troposphere, in which the planetary boundary layer and the free troposphere are depicted. Image credit: \citet{Stull_1988}.}
+	\label{fig:pbl_diagram}
+\end{figure}
+
+The urban boundary layer (UBL) is the name given to the PBL when considered over urban areas. The distinction between the UBL and PBL is made because of the increased complexity presented to the PBL by the effects of urban surfaces on the atmosphere. Specifically, these effects introduce momentum fluxes due to increased surface roughness (think tall buildings, houses, other artificial structures), heat fluxes due to modified surface properties (think dark roads, impervious surfaces that do not retain or transpire water), and miscellaneous effects such as anthropogenic energy sources. These effects result in very complex airflow, modified scalar transport, and a heavily modified surface energy balance \citep{barlow2014}. Due to these factors, the UBL can fragment into various sublayers between which layer properties differ greatly. A simplied schematic representing these layers is shown in Figure \ref{fig:ubl_diagram}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Figures/ubl_diagram.png}
+	\caption{Diagram of the UBL with multiple scales shown to demonstrate the complexity of the flow environment. Image credit: \citet{rotach2005bubble}.}
+	\label{fig:ubl_diagram}
+\end{figure}
+
+The UBL will be laid out from the surface to the PBLH. The lowest sublayer of the UBL is the surface layer, which is a thin layer that exists immediately above the surface. Here, the highest turbulent stresses are found, and as a function of this, so are the highest momentum and heat fluxes. Above the surface layer, the urban canopy layer can be found. This layer exists from the top of the surface layer to the mean building height and is subject to eddy transport and turbulent mixing as a function of entrainment from the prevailing flow above the building heights. Above the urban canopy layer lies the roughness sublayer, within which significant turbulence occurs and similarity theory, a key method used to extrapolate boundary layer properties, tends to fail \citep{harman2007simple}. Above the roughness sublayer lies the mixed layer, which occupies the majority of the UBL. Within the mixed layer, coherent mixing occurs to create a semi-homogeneous layer within which heat, moisture, and momentum are well-distributed. The mixed layer is perturbed from below by boundary layer turbulence and above by entrainment from the free troposphere.
+
+\FloatBarrier
+
+\section{Brief history of UBL research}
 \label{sec:history}
 
-Please read the short pointers below and on the subsequent pages; this will help
-you avoid frustrations when submitting the final dissertation to the library.
+The concept of the UBL arose as a result of the notion of differential heating between urban and rural areas, which is now referred to as the urban heat island (UHI). The concept of the UHI has been noted for over a century, as denoted by the observations made by \citet{renou1862differences} in Paris. In these observations, temperature differences were denoted between central Paris and suburban areas, leading to the notion that urbanization had some effect on weather conditions. This notion was noted in several studies over successive decades in studies such as that done by \citet{hammon1902abstract}. However, these studies were somewhat rudimentary and did not venture into the root cause for this phenomenon. The physical reasoning behind this phenomenon began to be explored in earnest in the 1950s with the advent of improved observational technology, which was driven in particular by the ability to remotely sense data, allowing vertical temperature observations to be taken. This was the case with the work performed by \citet{duckworth1954effect}, in which vertical temperature profiles of cities in California were obtained to investigate the effects of urbanization on temperatures in the boundary layer. Their findings linked building density to increasing temperature, which is well captured in Figure \ref{fig:sf_isotherms}, as temperatures are highest in downtown San Francisco and decrease significantly with increasing distance from the highest building density towards the Pacific Ocean. Several additional important papers were published to build evidence to support the existence UHI phenomenon \citep{mitchell1961temperature, oke1973city, sundborg1950local}, although the observations captured in \citet{bornstein1968observations} provided direct observations of temperature distributions in the horizontal and vertical directions over New York City and its surrounding areas. This study quantified the effects of urban areas on the atmosphere within the boundary layer and proved to be a seminal study for UBL research.
 
-Your thesis should have 1.5in left and top margins, and 1in right and bottom
-margins. Getting this right is tricky since it may depend on your particular
-Latex installation. Most likely you will need to adjust some of the dimensions
-set up at the beginning of "bu\_ece\_thesis.sty" in this folder. Basically,
-every installation should have the base margin of 1in at the left and top, but
-this is not always the case. For example, the TexStudio/MiKTeX installation this
-document was set up on, has the default top margin of 0.3125in and so an
-additional margin of 0.6875in was added via $\backslash${topmargin}. In order to
-adjust these dimensions, you may want to follow these steps:
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Figures/isotherms.png}
+	\caption{Isotherms overlaid on an aerial photograph of San Francisco looking west from San Francisco Bay. Image credit: \citet{duckworth1954effect}.}
+	\label{fig:sf_isotherms}
+\end{figure}
 
-\begin{itemize}
-	\item compile the document into PDF,
-	\item open the document in Acroread, set it to full-page viewing and
-		magnification to 100\%
-	\item navigate to a "full" page with the text extending from the very
-		top to the very bottom and full-width left to right,
-	\item measure the margins and adjust accordingly,
-	\item if you are planning to print a hardcopy, you need to make sure
-		to select "Page scaling" to "None" in Acrobat.
-\end{itemize}
+Through the late 1960s into the 1970s, research into the boundary layer with urban areas began to grow. Areas of research began to branch out into numerical modeling \citep{raman1975physical, atwater1972thermal, yu1975numerical, myrup1969numerical}, turbulence in the UBL \citep{bowne1970observational, gutman1975response, brook1975note}, and the vertical structure of heat and moisture throughout the UBL \citep{hage1975urban, oke1976distinction}. The multiple subdisciplines within the field of UBL research allowed for the formation of a comprehensive understanding of the UHI and the UBL associated with it, as well as the impact of cities on momentum, heat, and moisture fluxes. Cities were found to increase turbulent transfer of these quantities due to increase surface roughness relative to rural areas and open water. Moreover, the presence of human activities (residential, commercial, industrial) has been found to lead to anthropogenic fluxes that contribute to UHI formation and strengthening, which has direct impacts on public health and infrastructure. \citet{oke1975urban} was one of the first studies that highlighted the role of anthropogenically-induced contributions to heat and moisture fluxes in urban areas, with automobile emissions and air conditioning/heating systems being cited as substantial contributors to urban heat fluxes. However, technological limitations to observational infrastructure hindered several facets of UBL research, especially at higher levels in the UBL.
 
-Another issue that BU librarians may complain about and you are likely to encounter
-are long URLs or other unbreakable text. In case of long URL addresses, you
-should use the URL package; please see suitable documentation on-line.
+Through the 1970s and 1980s, remote sensing technologies improved greatly with regards to temporal, vertical, and spatial resolution. Several satellites became operational, allowing for wide spatial extents to be covered and surface properties to be evaluated at larger continuous spatial intervals than ever before. The improvement of satellite technology for remote sensing purposes has been a significant contributor to the advancing of surface-based factors and processes, ranging from the estimation of land surface temperature \citep{
+carlson1977potential, henderson1980albedo, legeckis1978survey} to land cover types \citep{allan1980remote, townshend1987characterization}. Microwave radiometer technology advanced and enabled the observation of heat and moisture in the vertical, allowing for more comprehensive and higher-resolution studies of the boundary layer to supplement observations taken at specific points or path through the boundary layer \citep{
+martner1993evaluation, frisch1995measurement}. Light detection and ranging (lidar) technologies also became more mature, allowing for ground-based remote sensing in the vertical to improve drastically. The advent of lidar for evaluating boundary layer dynamics has been crucial to improving our understanding of turbulent processes in the UBL due to the sufficient sampling frequency to enable detection of turbulence at the microscale, despite vertical ranges and resolutions being somewhat limited \citep{kunkel1977lidar, kopp1984remote, schwiesow1986lidar}.
 
-However, if you encounter a long unbreakable word (e.g., foreign) the URL
-package does not help. Have a look at the example extending into the page
-margin:
+Through the turn of the century and to date, UBL research has focused greatly on improving observational methods, synthesizing observations on multiple scales, and employing computational methods to improve the ability for numerical weather prediction (NWP) models to properly represent small-scale processes specific to urban areas \citep{barlow2014, grimmond2010international}. The synthesis of observations and forecasting abilities is of utmost importance for urban areas due to the number of people and quantity of critical infrastructure impacted by natural hazards such as extreme heat and severe storms \citep{sharif2006use, wilson1998nowcasting, lewis2017improvements}.
 
-\bigskip
+\section{Outline and objectives}
+\label{sec:outline}
 
-{\it Consider the following Java-JDT plugin name in German: "`Plugin-Entwicklungsumgebung"'.}
+The objectives of this thesis are to summarize the work performed to improve the understanding of the UBL using remote sensing methods and present novel methods and results that achieve the preceding objective.
 
-\bigskip
+To accomplish these objectives, the thesis will be outlined as following; Chapter 2 will present a novel method used to estimate surface sensible heat flux in New York City using satellite data. Additionally, the validation method and results from the validation process will be presented to establish the effectiveness of this novel method. The outcome of this method shows the potential that satellite-derived data have on improving our understanding of  surface processes.
 
-Clearly, this is a problem, and BU librarians will complain. One way of fixing
-this issue is to enclose the offending paragraph in {\tt
-	$\backslash$begin\{sloppypar\}} and {\tt $\backslash$end\{sloppypar\}},
-resulting in the following outcome:
+Chapter 3 will present a climatology of the UBL over New York City during extreme heat events. This climatology is constructed from long-term observations using a combination of remote sensing methods, namely, lidar and microwave radiometry. These remote sensing methods allow for a comprehensive analysis of the UBL that has not been performed for extreme heat, to the author's knowledge. The outcome of this analysis allows for the identification of the ways in which extreme heat events affect the UBL throughout its depth, as well as the effects of the sea breeze on extreme heat.
 
-\bigskip
-
-\begin{sloppypar}
-	{\it Consider the following Java-JDT plugin name in German:
-		"`Plugin-Entwicklungsumgebung"'.}
-\end{sloppypar}
-
-\bigskip
-
-Indeed, although the paragraph spacing becomes sloppy, at least you can hand in
-the thesis!
-
-
-LaTeX has a steep learning curve. You can use the original book by Lamport to
-learn more \cite{lamport1985:latex}, but there are many on-line resources with
-excellent instructions and examples. Just Google a LaTeX topic you would like to
-explore.
-
-As far as editing and compilation of LaTeX sources, if you have not found one
-yet, TexStudio seems to be quite popular.
+Chapter 4 will summarize the findings of this work, draw overarching conclusions relevant to the societal impact of this research, and identify future work that can be performed to further advance our understanding of this topic.

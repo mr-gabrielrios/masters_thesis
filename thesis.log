@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.4)  21 MAY 2022 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.4)  21 MAY 2022 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -765,8 +765,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \@quotelevel=\count441
 \@quotereset=\count442
  (./thesis.aux (./0_Prelim/prelim.aux) (./1_Intro/intro.aux)
-(./2_Pub1/body.aux) (./3_Pub2/body.aux) (./4_Pub3/body.aux)
-(./5_Conclusions/conclusions.aux) (./Appendix/Appendix.aux))
+(./2_Pub1/body.aux) (./3_Pub2/body.aux) (./5_Conclusions/conclusions.aux)
+(./Appendix/Appendix.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
@@ -810,28 +810,14 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
 
-(./thesis.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Debr01
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                lamport1985:latex
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+(./thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 75.
 Package biblatex Info: Reference segment=0 on input line 75.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count443
 \scratchdimen=\dimen193
@@ -939,11 +925,11 @@ or  <return>  to continue without it.
 ] (./thesis.lof [8
 
 
-] [9])
+] [9] [10])
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
- [10] [11]
+ [11]
 Overfull \hbox (39.17992pt too wide) in paragraph at lines 98--109
  [] 
  []
@@ -956,6 +942,12 @@ Overfull \hbox (39.17992pt too wide) in paragraph at lines 98--109
 
  (./1_Intro/intro.tex
 Chapter 1.
+<1_Intro//Figures/pbl_diagram.png, id=411, 586.19pt x 229.85875pt>
+File: 1_Intro//Figures/pbl_diagram.png Graphic file (type png)
+<use 1_Intro//Figures/pbl_diagram.png>
+Package pdftex.def Info: 1_Intro//Figures/pbl_diagram.png  used on input line 1
+4.
+(pdftex.def)             Requested size: 216.81pt x 85.01483pt.
 [1
 
 
@@ -963,32 +955,26 @@ Chapter 1.
 
 
 
-]
-Overfull \hbox (40.9694pt too wide) in paragraph at lines 42--43
-[]\OT1/cmr/m/it/12 Consider the fol-low-ing Java-JDT plu-gin name in Ger-man: "
-`Plugin-Entwicklungsumgebung"'. 
- []
+ <./1_Intro//Figures/pbl_diagram.png>]
+<1_Intro//Figures/ubl_diagram.png, id=424, 507.8975pt x 546.04pt>
+File: 1_Intro//Figures/ubl_diagram.png Graphic file (type png)
+<use 1_Intro//Figures/ubl_diagram.png>
+Package pdftex.def Info: 1_Intro//Figures/ubl_diagram.png  used on input line 2
+3.
+(pdftex.def)             Requested size: 325.215pt x 349.6477pt.
+ [2] [3 <./1_Intro//Figures/ubl_diagram.png>]
+<1_Intro//Figures/isotherms.png, id=448, 864.22874pt x 478.78876pt>
+File: 1_Intro//Figures/isotherms.png Graphic file (type png)
+<use 1_Intro//Figures/isotherms.png>
+Package pdftex.def Info: 1_Intro//Figures/isotherms.png  used on input line 39.
 
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-48.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 48.
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 48.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
-[]\OT1/cmr/m/it/12 Consider the fol-low-ing Java-JDT plu-gin name in Ger-man: "
-`Plugin-
- []
-
-) [2]
+(pdftex.def)             Requested size: 325.215pt x 180.16632pt.
+ [4] [5 <./1_Intro//Figures/isotherms.png>] [6]) [7]
 \openout2 = `2_Pub1/body.aux'.
 
  (./2_Pub1/body.tex
 Chapter 2.
-[3
+[8
 
 
 
@@ -1023,8 +1009,8 @@ l.25 ...{Kim_2019} and \citet{Ortega-Farias_2016}
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[4] [5] [6] [7]
-<2_Pub1//Figures/fig1.pdf, id=496, 560.0925pt x 578.16pt>
+[9] [10] [11] [12]
+<2_Pub1//Figures/fig1.pdf, id=610, 560.0925pt x 578.16pt>
 File: 2_Pub1//Figures/fig1.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig1.pdf>
 Package pdftex.def Info: 2_Pub1//Figures/fig1.pdf  used on input line 48.
@@ -1033,14 +1019,14 @@ Package pdftex.def Info: 2_Pub1//Figures/fig1.pdf  used on input line 48.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8]
+[13]
 Overfull \hbox (6.66988pt too wide) in paragraph at lines 57--58
 \OT1/cmr/m/n/12 tur-bu-lence pa-ram-e-ter-i-za-tions based on scal-ing ar-gu-me
 nts pre-sented by Monin-Obukhov
  []
 
-[9 <./2_Pub1//Figures/fig1.pdf>]
-<2_Pub1//Figures/fig2.pdf, id=538, 766.78468pt x 250.0542pt>
+[14 <./2_Pub1//Figures/fig1.pdf>]
+<2_Pub1//Figures/fig2.pdf, id=654, 766.78468pt x 250.0542pt>
 File: 2_Pub1//Figures/fig2.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig2.pdf>
 Package pdftex.def Info: 2_Pub1//Figures/fig2.pdf  used on input line 61.
@@ -1053,13 +1039,13 @@ File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 70.
- [10 <./2_Pub1//Figures/fig2.pdf>] [11] [12] [13]
-<2_Pub1//Figures/fig3.pdf, id=625, 686.565pt x 469.755pt>
+ [15 <./2_Pub1//Figures/fig2.pdf>] [16] [17] [18]
+<2_Pub1//Figures/fig3.pdf, id=739, 686.565pt x 469.755pt>
 File: 2_Pub1//Figures/fig3.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig3.pdf>
 Package pdftex.def Info: 2_Pub1//Figures/fig3.pdf  used on input line 143.
 (pdftex.def)             Requested size: 325.215pt x 222.51234pt.
-<2_Pub1//Figures/fig4.pdf, id=628, 567.52965pt x 499.53465pt>
+<2_Pub1//Figures/fig4.pdf, id=742, 567.52965pt x 499.53465pt>
 File: 2_Pub1//Figures/fig4.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig4.pdf>
 Package pdftex.def Info: 2_Pub1//Figures/fig4.pdf  used on input line 150.
@@ -1068,13 +1054,13 @@ Package pdftex.def Info: 2_Pub1//Figures/fig4.pdf  used on input line 150.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./2_Pub1//Figures/fig3.pdf>]
+[19 <./2_Pub1//Figures/fig3.pdf>]
 Overfull \hbox (2.64772pt too wide) in paragraph at lines 162--163
 \OT1/cmr/m/n/12 GOES-17, are op-er-ated by the Na-tional Aero-nau-tic and Space
  Ad-min-is-tra-tion (NASA)
  []
 
-[15 <./2_Pub1//Figures/fig4.pdf>] [16] [17] [18] [19] [20]
+[20 <./2_Pub1//Figures/fig4.pdf>] [21] [22] [23] [24] [25]
 ! Undefined control sequence.
 <argument> ...i=1}^{N}(Q_{H, i, observed} - \mean 
                                                   {Q_{H, observed}})^2
@@ -1108,40 +1094,40 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<2_Pub1//Figures/fig5.pdf, id=767, 408.10028pt x 448.01442pt>
+<2_Pub1//Figures/fig5.pdf, id=883, 408.10028pt x 448.01442pt>
 File: 2_Pub1//Figures/fig5.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig5.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig5.pdf  used on input line 225.
+Package pdftex.def Info: 2_Pub1//Figures/fig5.pdf  used on input line 227.
 (pdftex.def)             Requested size: 216.81pt x 238.0139pt.
-[21]
-<2_Pub1//Figures/fig6a.pdf, id=776, 408.10028pt x 448.01442pt>
+[26]
+<2_Pub1//Figures/fig6a.pdf, id=892, 408.10028pt x 448.01442pt>
 File: 2_Pub1//Figures/fig6a.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig6a.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig6a.pdf  used on input line 238.
+Package pdftex.def Info: 2_Pub1//Figures/fig6a.pdf  used on input line 240.
 (pdftex.def)             Requested size: 143.09538pt x 157.08768pt.
-<2_Pub1//Figures/fig6b.pdf, id=777, 408.10028pt x 448.01442pt>
+<2_Pub1//Figures/fig6b.pdf, id=893, 408.10028pt x 448.01442pt>
 File: 2_Pub1//Figures/fig6b.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig6b.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig6b.pdf  used on input line 242.
+Package pdftex.def Info: 2_Pub1//Figures/fig6b.pdf  used on input line 244.
 (pdftex.def)             Requested size: 143.09538pt x 157.08768pt.
-<2_Pub1//Figures/fig6c.pdf, id=778, 414.62093pt x 448.01442pt>
+<2_Pub1//Figures/fig6c.pdf, id=894, 414.62093pt x 448.01442pt>
 File: 2_Pub1//Figures/fig6c.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig6c.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig6c.pdf  used on input line 246.
+Package pdftex.def Info: 2_Pub1//Figures/fig6c.pdf  used on input line 248.
 (pdftex.def)             Requested size: 143.09538pt x 154.61983pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<2_Pub1//Figures/fig7.pdf, id=779, 456.23605pt x 327.97029pt>
+<2_Pub1//Figures/fig7.pdf, id=895, 456.23605pt x 327.97029pt>
 File: 2_Pub1//Figures/fig7.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig7.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig7.pdf  used on input line 254.
+Package pdftex.def Info: 2_Pub1//Figures/fig7.pdf  used on input line 256.
 (pdftex.def)             Requested size: 325.215pt x 233.79135pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22 <./2_Pub1//Figures/fig5.pdf>] [23 <./2_Pub1//Figures/fig6a.pdf> <./2_Pub1//
+[27 <./2_Pub1//Figures/fig5.pdf>] [28 <./2_Pub1//Figures/fig6a.pdf> <./2_Pub1//
 Figures/fig6b.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig6b.pdf)
@@ -1155,31 +1141,31 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig6c.pdf)
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig7.pdf):
  PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<2_Pub1//Figures/fig8.pdf, id=1132, 447.8769pt x 482.56287pt>
+<2_Pub1//Figures/fig8.pdf, id=1248, 447.8769pt x 482.56287pt>
 File: 2_Pub1//Figures/fig8.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig8.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig8.pdf  used on input line 267.
+Package pdftex.def Info: 2_Pub1//Figures/fig8.pdf  used on input line 269.
 (pdftex.def)             Requested size: 325.215pt x 350.39769pt.
- [24 <./2_Pub1//Figures/fig8.pdf>]
-<2_Pub1//Figures/fig9.pdf, id=1212, 402.95544pt x 272.13011pt>
+ [29 <./2_Pub1//Figures/fig8.pdf>]
+<2_Pub1//Figures/fig9.pdf, id=1327, 402.95544pt x 272.13011pt>
 File: 2_Pub1//Figures/fig9.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig9.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig9.pdf  used on input line 276.
+Package pdftex.def Info: 2_Pub1//Figures/fig9.pdf  used on input line 278.
 (pdftex.def)             Requested size: 325.215pt x 219.63522pt.
 
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig10.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<2_Pub1//Figures/fig10.pdf, id=1213, 644.16661pt x 595.9866pt>
+<2_Pub1//Figures/fig10.pdf, id=1328, 644.16661pt x 595.9866pt>
 File: 2_Pub1//Figures/fig10.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig10.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig10.pdf  used on input line 286.
+Package pdftex.def Info: 2_Pub1//Figures/fig10.pdf  used on input line 288.
 (pdftex.def)             Requested size: 325.215pt x 300.66165pt.
-[25 <./2_Pub1//Figures/fig9.pdf>] [26 <./2_Pub1//Figures/fig10.pdf>]
-<2_Pub1//Figures/fig12.pdf, id=1280, 456.23605pt x 342.36783pt>
+[30 <./2_Pub1//Figures/fig9.pdf>] [31 <./2_Pub1//Figures/fig10.pdf>]
+<2_Pub1//Figures/fig12.pdf, id=1396, 456.23605pt x 342.36783pt>
 File: 2_Pub1//Figures/fig12.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig12.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig12.pdf  used on input line 301.
+Package pdftex.def Info: 2_Pub1//Figures/fig12.pdf  used on input line 303.
 (pdftex.def)             Requested size: 325.215pt x 244.05452pt.
 
 
@@ -1189,51 +1175,54 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig13a.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<2_Pub1//Figures/fig13a.pdf, id=1281, 651.53337pt x 596.91708pt>
+<2_Pub1//Figures/fig13a.pdf, id=1397, 651.53337pt x 596.91708pt>
 File: 2_Pub1//Figures/fig13a.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig13a.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig13a.pdf  used on input line 310.
+Package pdftex.def Info: 2_Pub1//Figures/fig13a.pdf  used on input line 312.
 (pdftex.def)             Requested size: 197.29788pt x 180.4428pt.
 
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig13b.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<2_Pub1//Figures/fig13b.pdf, id=1283, 786.69482pt x 596.91708pt>
+<2_Pub1//Figures/fig13b.pdf, id=1399, 786.69482pt x 596.91708pt>
 File: 2_Pub1//Figures/fig13b.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig13b.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig13b.pdf  used on input line 314.
+Package pdftex.def Info: 2_Pub1//Figures/fig13b.pdf  used on input line 316.
 (pdftex.def)             Requested size: 236.3221pt x 178.42587pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27]
+[32]
 
-LaTeX Warning: Text page 28 contains only floats.
+LaTeX Warning: Text page 33 contains only floats.
 
-[28 <./2_Pub1//Figures/fig13a.pdf> <./2_Pub1//Figures/fig13b.pdf> <./2_Pub1//Fi
+[33 <./2_Pub1//Figures/fig13a.pdf> <./2_Pub1//Figures/fig13b.pdf> <./2_Pub1//Fi
 gures/fig12.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig12.pdf)
 : PDF inclusion: multiple pdfs with page group included in a single page
->] [29]
-Overfull \hbox (56.44371pt too wide) in paragraph at lines 338--360
+>] [34]
+Overfull \hbox (56.44371pt too wide) in paragraph at lines 340--362
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<2_Pub1//Figures/fig11a.pdf, id=1398, 395.20775pt x 266.45265pt>
+<2_Pub1//Figures/fig11a.pdf, id=1514, 395.20775pt x 266.45265pt>
 File: 2_Pub1//Figures/fig11a.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig11a.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig11a.pdf  used on input line 366.
+Package pdftex.def Info: 2_Pub1//Figures/fig11a.pdf  used on input line 368.
 (pdftex.def)             Requested size: 208.13574pt x 140.32477pt.
-<2_Pub1//Figures/fig11b.pdf, id=1399, 395.20775pt x 262.79053pt>
+<2_Pub1//Figures/fig11b.pdf, id=1515, 395.20775pt x 262.79053pt>
 File: 2_Pub1//Figures/fig11b.pdf Graphic file (type pdf)
 <use 2_Pub1//Figures/fig11b.pdf>
-Package pdftex.def Info: 2_Pub1//Figures/fig11b.pdf  used on input line 370.
+Package pdftex.def Info: 2_Pub1//Figures/fig11b.pdf  used on input line 372.
 (pdftex.def)             Requested size: 208.13574pt x 138.39613pt.
-[30 <./2_Pub1//Figures/fig11a.pdf> <./2_Pub1//Figures/fig11b.pdf
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36 <./2_Pub1//Figures/fig11a.pdf> <./2_Pub1//Figures/fig11b.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./2_Pub1//Figures/fig11b.pdf
 ): PDF inclusion: multiple pdfs with page group included in a single page
@@ -1246,18 +1235,18 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.382 ...1 W-$m^{-2}$. \citet{Ortega-Farias_2016} 
+l.384 ...1 W-$m^{-2}$. \citet{Ortega-Farias_2016} 
                                                   described using an unmanne...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[31] [32] [33] [34] [35] [36] [37] [38] [39] [40]) [41] [42]
+[37] [38] [39] [40] [41] [42] [43] [44] [45]) [46]
 \openout2 = `3_Pub2/body.aux'.
 
  (./3_Pub2/body.tex
 Chapter 3.
-[43
+[47
 
 
 
@@ -1268,13 +1257,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--26
 
  []
 
-[44] [45] [46] [47]
-<3_Pub2//Figures/nyc_map.png, id=1751, 254.8722pt x 240.1773pt>
+[48] [49] [50] [51]
+<3_Pub2//Figures/nyc_map.png, id=1860, 254.8722pt x 240.1773pt>
 File: 3_Pub2//Figures/nyc_map.png Graphic file (type png)
 <use 3_Pub2//Figures/nyc_map.png>
 Package pdftex.def Info: 3_Pub2//Figures/nyc_map.png  used on input line 54.
 (pdftex.def)             Requested size: 325.215pt x 306.49503pt.
- [48] [49 <./3_Pub2//Figures/nyc_map.png>]
+ [52] [53 <./3_Pub2//Figures/nyc_map.png>]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
 (caption)                outside box or environment on input line 62.
@@ -1345,7 +1334,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--85
 
  []
 
-[50] [51]
+[54] [55]
 Underfull \hbox (badness 10000) in paragraph at lines 87--94
 
  []
@@ -1360,7 +1349,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--94
 
  []
 
-[52] [53]
+[56] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 100--105
 
  []
@@ -1370,15 +1359,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--105
 
  []
 
-[54]
-<3_Pub2//Figures/heat_wave-normal-anomaly.png, id=1829, 432.1746pt x 518.8986pt
+[58]
+<3_Pub2//Figures/heat_wave-normal-anomaly.png, id=1937, 432.1746pt x 518.8986pt
 >
 File: 3_Pub2//Figures/heat_wave-normal-anomaly.png Graphic file (type png)
 <use 3_Pub2//Figures/heat_wave-normal-anomaly.png>
 Package pdftex.def Info: 3_Pub2//Figures/heat_wave-normal-anomaly.png  used on 
 input line 109.
 (pdftex.def)             Requested size: 325.215pt x 390.48734pt.
-<3_Pub2//Figures/heat_wave-normal-profiles-surface.png, id=1830, 372.1905pt x 5
+<3_Pub2//Figures/heat_wave-normal-profiles-surface.png, id=1938, 372.1905pt x 5
 29.7391pt>
 File: 3_Pub2//Figures/heat_wave-normal-profiles-surface.png Graphic file (type 
 png)
@@ -1386,7 +1375,7 @@ png)
 Package pdftex.def Info: 3_Pub2//Figures/heat_wave-normal-profiles-surface.png 
  used on input line 116.
 (pdftex.def)             Requested size: 325.215pt x 462.8739pt.
-<3_Pub2//Figures/vertical_profiles-heat_wave-normal-theta.png, id=1831, 361.109
+<3_Pub2//Figures/vertical_profiles-heat_wave-normal-theta.png, id=1939, 361.109
 1pt x 416.5161pt>
 File: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-theta.png Graphic file
  (type png)
@@ -1394,8 +1383,8 @@ File: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-theta.png Graphic file
 Package pdftex.def Info: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-the
 ta.png  used on input line 123.
 (pdftex.def)             Requested size: 325.215pt x 375.12794pt.
- [55] [56 <./3_Pub2//Figures/heat_wave-normal-anomaly.png>] [57 <./3_Pub2//Figu
-res/heat_wave-normal-profiles-surface.png>] [58 <./3_Pub2//Figures/vertical_pro
+ [59] [60 <./3_Pub2//Figures/heat_wave-normal-anomaly.png>] [61 <./3_Pub2//Figu
+res/heat_wave-normal-profiles-surface.png>] [62 <./3_Pub2//Figures/vertical_pro
 files-heat_wave-normal-theta.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 131--138
 
@@ -1411,10 +1400,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--138
 
  []
 
-[59
+[63
 
 ]
-<3_Pub2//Figures/vertical_profiles-heat_wave-normal-q.png, id=1862, 361.1091pt 
+<3_Pub2//Figures/vertical_profiles-heat_wave-normal-q.png, id=1971, 361.1091pt 
 x 416.5161pt>
 File: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-q.png Graphic file (ty
 pe png)
@@ -1422,7 +1411,7 @@ pe png)
 Package pdftex.def Info: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-q.p
 ng  used on input line 141.
 (pdftex.def)             Requested size: 325.215pt x 375.12794pt.
- [60]
+ [64]
 Underfull \hbox (badness 10000) in paragraph at lines 151--156
 
  []
@@ -1438,8 +1427,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--156
 
  []
 
-[61 <./3_Pub2//Figures/vertical_profiles-heat_wave-normal-q.png>] [62]
-<3_Pub2//Figures/vertical_profiles-heat_wave-normal-U.png, id=1892, 361.35pt x 
+[65 <./3_Pub2//Figures/vertical_profiles-heat_wave-normal-q.png>] [66]
+<3_Pub2//Figures/vertical_profiles-heat_wave-normal-U.png, id=2000, 361.35pt x 
 416.2752pt>
 File: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-U.png Graphic file (ty
 pe png)
@@ -1447,27 +1436,27 @@ pe png)
 Package pdftex.def Info: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-U.p
 ng  used on input line 160.
 (pdftex.def)             Requested size: 325.215pt x 374.65057pt.
-<3_Pub2//Figures/wind_rose-bron.png, id=1893, 423.5022pt x 500.3493pt>
+<3_Pub2//Figures/wind_rose-bron.png, id=2001, 423.5022pt x 500.3493pt>
 File: 3_Pub2//Figures/wind_rose-bron.png Graphic file (type png)
 <use 3_Pub2//Figures/wind_rose-bron.png>
 Package pdftex.def Info: 3_Pub2//Figures/wind_rose-bron.png  used on input line
  167.
 (pdftex.def)             Requested size: 325.215pt x 384.2242pt.
- [63 <./3_Pub2//Figures/vertical_profiles-heat_wave-normal-U.png>]
-<3_Pub2//Figures/wind_rose-quee.png, id=1900, 423.5022pt x 500.3493pt>
+ [67 <./3_Pub2//Figures/vertical_profiles-heat_wave-normal-U.png>]
+<3_Pub2//Figures/wind_rose-quee.png, id=2009, 423.5022pt x 500.3493pt>
 File: 3_Pub2//Figures/wind_rose-quee.png Graphic file (type png)
 <use 3_Pub2//Figures/wind_rose-quee.png>
 Package pdftex.def Info: 3_Pub2//Figures/wind_rose-quee.png  used on input line
  173.
 (pdftex.def)             Requested size: 325.215pt x 384.2242pt.
-<3_Pub2//Figures/wind_rose-stat.png, id=1901, 423.5022pt x 500.3493pt>
+<3_Pub2//Figures/wind_rose-stat.png, id=2010, 423.5022pt x 500.3493pt>
 File: 3_Pub2//Figures/wind_rose-stat.png Graphic file (type png)
 <use 3_Pub2//Figures/wind_rose-stat.png>
 Package pdftex.def Info: 3_Pub2//Figures/wind_rose-stat.png  used on input line
  179.
 (pdftex.def)             Requested size: 325.215pt x 384.2242pt.
- [64 <./3_Pub2//Figures/wind_rose-bron.png>] [65 <./3_Pub2//Figures/wind_rose-q
-uee.png>] [66 <./3_Pub2//Figures/wind_rose-stat.png>]
+ [68 <./3_Pub2//Figures/wind_rose-bron.png>] [69 <./3_Pub2//Figures/wind_rose-q
+uee.png>] [70 <./3_Pub2//Figures/wind_rose-stat.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 187--190
 
  []
@@ -1478,10 +1467,10 @@ Underfull \hbox (badness 1721) in paragraph at lines 187--190
 -a-tive to nor-mal
  []
 
-[67
+[71
 
 ]
-<3_Pub2//Figures/vertical_profiles-heat_wave-normal-w.png, id=1931, 361.35pt x 
+<3_Pub2//Figures/vertical_profiles-heat_wave-normal-w.png, id=2038, 361.35pt x 
 416.2752pt>
 File: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-w.png Graphic file (ty
 pe png)
@@ -1490,7 +1479,7 @@ Package pdftex.def Info: 3_Pub2//Figures/vertical_profiles-heat_wave-normal-w.p
 ng  used on input line 194.
 (pdftex.def)             Requested size: 325.215pt x 374.65057pt.
 <3_Pub2//Figures/case_studies/normal-heat_wave-comparison_20190726_20190729-bro
-n.png, id=1932, 359.9046pt x 197.538pt>
+n.png, id=2039, 359.9046pt x 197.538pt>
 File: 3_Pub2//Figures/case_studies/normal-heat_wave-comparison_20190726_2019072
 9-bron.png Graphic file (type png)
 <use 3_Pub2//Figures/case_studies/normal-heat_wave-comparison_20190726_20190729
@@ -1498,27 +1487,27 @@ File: 3_Pub2//Figures/case_studies/normal-heat_wave-comparison_20190726_2019072
 Package pdftex.def Info: 3_Pub2//Figures/case_studies/normal-heat_wave-comparis
 on_20190726_20190729-bron.png  used on input line 202.
 (pdftex.def)             Requested size: 325.215pt x 178.51198pt.
- [68 <./3_Pub2//Figures/vertical_profiles-heat_wave-normal-w.png>]
+ [72 <./3_Pub2//Figures/vertical_profiles-heat_wave-normal-w.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 211--214
 
  []
 
-[69 <./3_Pub2//Figures/case_studies/normal-heat_wave-comparison_20190726_201907
+[73 <./3_Pub2//Figures/case_studies/normal-heat_wave-comparison_20190726_201907
 29-bron.png>]
-<3_Pub2//Figures/sea_breeze-lst_sst-diff.png, id=1952, 281.853pt x 281.853pt>
+<3_Pub2//Figures/sea_breeze-lst_sst-diff.png, id=2060, 281.853pt x 281.853pt>
 File: 3_Pub2//Figures/sea_breeze-lst_sst-diff.png Graphic file (type png)
 <use 3_Pub2//Figures/sea_breeze-lst_sst-diff.png>
 Package pdftex.def Info: 3_Pub2//Figures/sea_breeze-lst_sst-diff.png  used on i
 nput line 218.
 (pdftex.def)             Requested size: 325.215pt x 325.22081pt.
-<3_Pub2//Figures/sea_breeze-normal-anomaly.png, id=1953, 432.1746pt x 388.8126p
+<3_Pub2//Figures/sea_breeze-normal-anomaly.png, id=2061, 432.1746pt x 388.8126p
 t>
 File: 3_Pub2//Figures/sea_breeze-normal-anomaly.png Graphic file (type png)
 <use 3_Pub2//Figures/sea_breeze-normal-anomaly.png>
 Package pdftex.def Info: 3_Pub2//Figures/sea_breeze-normal-anomaly.png  used on
  input line 225.
 (pdftex.def)             Requested size: 325.215pt x 292.59357pt.
-<3_Pub2//Figures/sea_breeze_heat_wave-heat_wave_anomaly.png, id=1954, 432.1746p
+<3_Pub2//Figures/sea_breeze_heat_wave-heat_wave_anomaly.png, id=2062, 432.1746p
 t x 388.8126pt>
 File: 3_Pub2//Figures/sea_breeze_heat_wave-heat_wave_anomaly.png Graphic file (
 type png)
@@ -1526,8 +1515,8 @@ type png)
 Package pdftex.def Info: 3_Pub2//Figures/sea_breeze_heat_wave-heat_wave_anomaly
 .png  used on input line 232.
 (pdftex.def)             Requested size: 325.215pt x 292.59357pt.
- [70 <./3_Pub2//Figures/sea_breeze-lst_sst-diff.png>] [71 <./3_Pub2//Figures/se
-a_breeze-normal-anomaly.png>] [72 <./3_Pub2//Figures/sea_breeze_heat_wave-heat_
+ [74 <./3_Pub2//Figures/sea_breeze-lst_sst-diff.png>] [75 <./3_Pub2//Figures/se
+a_breeze-normal-anomaly.png>] [76 <./3_Pub2//Figures/sea_breeze_heat_wave-heat_
 wave_anomaly.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 240--243
 
@@ -1539,7 +1528,7 @@ Underfull \hbox (badness 1226) in paragraph at lines 240--243
 breeze plays a
  []
 
-[73
+[77
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 245--252
@@ -1556,8 +1545,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--252
 
  []
 
-[74]
-<3_Pub2//Figures/histogram-wind_direction-sea_breeze-100m.png, id=1992, 450.723
+[78]
+<3_Pub2//Figures/histogram-wind_direction-sea_breeze-100m.png, id=2100, 450.723
 9pt x 312.9291pt>
 File: 3_Pub2//Figures/histogram-wind_direction-sea_breeze-100m.png Graphic file
  (type png)
@@ -1565,7 +1554,7 @@ File: 3_Pub2//Figures/histogram-wind_direction-sea_breeze-100m.png Graphic file
 Package pdftex.def Info: 3_Pub2//Figures/histogram-wind_direction-sea_breeze-10
 0m.png  used on input line 256.
 (pdftex.def)             Requested size: 325.215pt x 225.79103pt.
- [75]
+ [79]
 Underfull \hbox (badness 10000) in paragraph at lines 266--277
 
  []
@@ -1591,83 +1580,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--277
 
  []
 
-[76 <./3_Pub2//Figures/histogram-wind_direction-sea_breeze-100m.png>] [77]
-[78] [79] [80] [81]
+[80 <./3_Pub2//Figures/histogram-wind_direction-sea_breeze-100m.png>] [81]
+[82] [83] [84]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 315.
+(caption)                particular \caption on input line 312.
 See the caption package documentation for explanation.
 
-) [82]
-\openout2 = `4_Pub3/body.aux'.
-
- (./4_Pub3/body.tex
-Chapter 4.
-Package epstopdf Info: Source file: <4_Pub3/Figures//figure_sampling_view1.eps>
-
-(epstopdf)                    date: 2014-02-10 16:21:32
-(epstopdf)                    size: 50161 bytes
-(epstopdf)             Output file: <4_Pub3/Figures//figure_sampling_view1-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2014-02-10 16:28:20
-(epstopdf)                    size: 51079 bytes
-(epstopdf)             Command: <repstopdf --outfile=4_Pub3/Figures//figure_sam
-pling_view1-eps-converted-to.pdf 4_Pub3/Figures//figure_sampling_view1.eps>
-(epstopdf)             \includegraphics on input line 17.
-Package epstopdf Info: Output file is already uptodate.
-<4_Pub3/Figures//figure_sampling_view1-eps-converted-to.pdf, id=2066, 400.49625
-pt x 396.48125pt>
-File: 4_Pub3/Figures//figure_sampling_view1-eps-converted-to.pdf Graphic file (
-type pdf)
-<use 4_Pub3/Figures//figure_sampling_view1-eps-converted-to.pdf>
-Package pdftex.def Info: 4_Pub3/Figures//figure_sampling_view1-eps-converted-to
-.pdf  used on input line 17.
-(pdftex.def)             Requested size: 199.16928pt x 197.17535pt.
-Package epstopdf Info: Source file: <4_Pub3/Figures//figure_sampling_view2.eps>
-
-(epstopdf)                    date: 2014-02-10 16:21:32
-(epstopdf)                    size: 50379 bytes
-(epstopdf)             Output file: <4_Pub3/Figures//figure_sampling_view2-eps-
-converted-to.pdf>
-(epstopdf)                    date: 2014-02-10 16:28:22
-(epstopdf)                    size: 51145 bytes
-(epstopdf)             Command: <repstopdf --outfile=4_Pub3/Figures//figure_sam
-pling_view2-eps-converted-to.pdf 4_Pub3/Figures//figure_sampling_view2.eps>
-(epstopdf)             \includegraphics on input line 22.
-Package epstopdf Info: Output file is already uptodate.
-<4_Pub3/Figures//figure_sampling_view2-eps-converted-to.pdf, id=2067, 400.49625
-pt x 396.48125pt>
-File: 4_Pub3/Figures//figure_sampling_view2-eps-converted-to.pdf Graphic file (
-type pdf)
-<use 4_Pub3/Figures//figure_sampling_view2-eps-converted-to.pdf>
-Package pdftex.def Info: 4_Pub3/Figures//figure_sampling_view2-eps-converted-to
-.pdf  used on input line 22.
-(pdftex.def)             Requested size: 199.16928pt x 197.17535pt.
-[83
-
-
-
-
-
- <./4_Pub3/Figures//figure_sampling_view1-eps-converted-to.pdf> <./4_Pub3/Figur
-es//figure_sampling_view2-eps-converted-to.pdf>]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 9
-7.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
-) [84
-
-]
+[85]) [86]
 \openout2 = `5_Conclusions/conclusions.aux'.
 
-
-(./5_Conclusions/conclusions.tex
-Chapter 5.
-) [85
+ (./5_Conclusions/conclusions.tex
+Chapter 4.
+) [87
 
 
 
@@ -1678,7 +1603,7 @@ Chapter 5.
 
  (./Appendix/Appendix.tex
 Appendix A.
-) [86
+) [88
 
 
 
@@ -1692,7 +1617,7 @@ See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.119 \bibliographystyle{apalike}
+l.113 \bibliographystyle{apalike}
                                  
 Use the package option 'style' instead.
 I'm ignoring this command.
@@ -1705,7 +1630,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 \cleardoublepage
+l.118 \cleardoublepage
                       
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -1718,16 +1643,16 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 \cleardoublepage
+l.118 \cleardoublepage
                       
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[87
+[89
 
 
 
-] [88] [89] [90] [91] [92] [93] [94]
+] [90] [91] [92] [93] [94] [95] [96] [97]
 
 ! Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
@@ -1736,40 +1661,28 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 \cleardoublepage
+l.118 \cleardoublepage
                       
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[95] [96] [97] [98] [99] (./thesis.aux (./0_Prelim/prelim.aux)
+[98] [99] [100] [101] [102] [103] (./thesis.aux (./0_Prelim/prelim.aux)
 (./1_Intro/intro.aux) (./2_Pub1/body.aux) (./3_Pub2/body.aux)
-(./4_Pub3/body.aux) (./5_Conclusions/conclusions.aux) (./Appendix/Appendix.aux)
-)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
-
+(./5_Conclusions/conclusions.aux) (./Appendix/Appendix.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 26B0EA449FEE8C40CF0663D2CC6AE897;8647.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                thesis
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: F4A1A5D7DFE49A65DEFEC00136275B4D;8749.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23568 strings out of 478994
- 433698 string characters out of 5858185
- 1152722 words of memory out of 5000000
- 40254 multiletter control sequences out of 15000+600000
+ 23709 strings out of 478994
+ 438160 string characters out of 5858185
+ 1177951 words of memory out of 5000000
+ 40372 multiletter control sequences out of 15000+600000
  414386 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,13n,75p,2883b,1733s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,13n,77p,2883b,1762s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1787,10 +1700,10 @@ ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (111 pages, 8759919 bytes).
+Output written on thesis.pdf (115 pages, 9247058 bytes).
 PDF statistics:
- 2356 PDF objects out of 2487 (max. 8388607)
- 1611 compressed objects within 17 object streams
- 393 named destinations out of 1000 (max. 500000)
- 517 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2457 PDF objects out of 2487 (max. 8388607)
+ 1701 compressed objects within 18 object streams
+ 428 named destinations out of 1000 (max. 500000)
+ 522 words of extra memory for PDF output out of 10000 (max. 10000000)
 
